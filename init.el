@@ -22,6 +22,9 @@
 (straight-use-package 'ivy-posframe)
 (straight-use-package 'company)
 (straight-use-package 'evil)
+(straight-use-package 'evil-anzu)
+(straight-use-package 'anzu)
+
 (straight-use-package 'markdown-mode)
 (straight-use-package 'markdown-preview-mode)
 (straight-use-package 'doom-modeline)
@@ -42,6 +45,10 @@
 
 ;; enable evil mode
 (evil-mode 1)
+
+;; show search count and index
+(require 'evil-anzu)
+(global-anzu-mode +1)
 
 ;; enable smartparens mode
 (smartparens-global-mode t)
