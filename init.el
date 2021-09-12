@@ -34,6 +34,8 @@
 ;; enable doom modeline
 (doom-modeline-mode 1)
 
+(setq doom-modeline-height 15)
+
 ;; enable evil mode
 (evil-mode 1)
 
