@@ -124,3 +124,7 @@
 
 ;; change backup settings
 (setq backup-directory-alist '(("." . "~/.cache/emacs-backups")))
+
+;; disable welcome page and message
+(setq inhibit-startup-screen t)
+(setq inhibit-startup-message t)
