@@ -128,3 +128,6 @@
 ;; disable welcome page and message
 (setq inhibit-startup-screen t)
 (setq inhibit-startup-message t)
+
+;; disable echo area message
+(setq inhibit-startup-echo-area-message t)
