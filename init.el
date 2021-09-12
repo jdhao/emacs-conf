@@ -116,8 +116,11 @@
 ;; the style for matching parentheses
 (set-face-background 'show-paren-match "#ff0000")
 (set-face-attribute 'show-paren-match nil
-		    :weight 'bold :underline t :overline nil :slant 'normal)
+            :weight 'bold :underline t :overline nil :slant 'normal)
 
 
 ;; show trailing white space
 (setq-default show-trailing-whitespace t)
+
+;; change backup settings
+(setq backup-directory-alist '(("." . "~/.cache/emacs-backups")))
