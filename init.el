@@ -55,6 +55,9 @@
 ;; use tab and s-tab to cycle forward and backward completion items
 (add-hook 'after-init-hook 'company-tng-mode)
 
+;; minimum num of typed character to trigger auto-completion
+(setq company-minimum-prefix-length 1)
+
 ;; enable ivy mode by default
 (ivy-mode 1)
 
