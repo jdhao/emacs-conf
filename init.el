@@ -70,8 +70,8 @@
 ;; or enable counsel mode
 ; (counsel-mode 1)
 
-;; rebind ctrl-x ctrl-f to use counsel-fzf
-(global-set-key (kbd "C-X C-F") 'counsel-fzf)
+;; rebind ctrl-x ctrl-f to use counsel-file-jump
+(global-set-key (kbd "C-X C-F") 'counsel-file-jump)
 
 ;; rebind ctrl-x ctrl-b to use counsel-switch-buffer
 (global-set-key (kbd "C-X C-B") 'counsel-switch-buffer)
