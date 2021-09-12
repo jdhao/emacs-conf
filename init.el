@@ -27,6 +27,10 @@
 (straight-use-package 'doom-modeline)
 (straight-use-package 'smartparens)
 (straight-use-package 'gcmh)
+(straight-use-package 'ace-window)
+
+;; key binding for ace-window
+(global-set-key (kbd "M-o") 'ace-window)
 
 ;; enable gcmh
 (gcmh-mode 1)
