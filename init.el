@@ -26,6 +26,10 @@
 (straight-use-package 'markdown-preview-mode)
 (straight-use-package 'doom-modeline)
 (straight-use-package 'smartparens)
+(straight-use-package 'gcmh)
+
+;; enable gcmh
+(gcmh-mode 1)
 
 ;; enable doom modeline
 (doom-modeline-mode 1)
