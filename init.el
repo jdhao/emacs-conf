@@ -150,6 +150,9 @@
 ;; change backup settings
 (setq backup-directory-alist '(("." . "~/.cache/emacs/backup")))
 
+;; disable auto-save mode
+(setq auto-save-default nil)
+
 
 ;; disable welcome page and message
 (setq inhibit-startup-screen t)
