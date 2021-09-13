@@ -24,13 +24,16 @@
 (straight-use-package 'evil)
 (straight-use-package 'evil-anzu)
 (straight-use-package 'anzu)
-
 (straight-use-package 'markdown-mode)
-(straight-use-package 'markdown-preview-mode)
 (straight-use-package 'doom-modeline)
 (straight-use-package 'smartparens)
 (straight-use-package 'gcmh)
 (straight-use-package 'ace-window)
+(straight-use-package 'all-the-icons)
+(straight-use-package 'dashboard)
+
+;; start dashboard
+(dashboard-setup-startup-hook)
 
 ;; key binding for ace-window
 (global-set-key (kbd "M-o") 'ace-window)
@@ -38,10 +41,17 @@
 ;; enable gcmh
 (gcmh-mode 1)
 
+;; doom-modeline settings
+
 ;; enable doom modeline
 (doom-modeline-mode 1)
 
+;; doom-modeline height
 (setq doom-modeline-height 15)
+
+(setq doom-modeline-icon nil)
+
+;; evil settings
 
 ;; enable evil mode
 (evil-mode 1)
