@@ -57,6 +57,9 @@
 ;; enable evil mode
 (evil-mode 1)
 
+;; mimic vim's ctrl-u for evil mode, see https://stackoverflow.com/q/14302171/6064933
+(define-key evil-normal-state-map (kbd "C-u") 'evil-scroll-up)
+
 ;; show search count and index
 (require 'evil-anzu)
 (global-anzu-mode +1)
