@@ -32,6 +32,14 @@
 (straight-use-package 'all-the-icons)
 (straight-use-package 'dashboard)
 (straight-use-package 'no-littering)
+(straight-use-package 'git-gutter)
+
+;; git-gutter settings
+(global-git-gutter-mode +1)
+
+;; mappings for git-gutter
+(global-set-key (kbd "C-x ]") 'git-gutter:next-hunk)
+(global-set-key (kbd "C-x [") 'git-gutter:previous-hunk)
 
 ;; start dashboard
 (dashboard-setup-startup-hook)
