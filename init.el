@@ -148,7 +148,8 @@
 (setq-default show-trailing-whitespace t)
 
 ;; change backup settings
-(setq backup-directory-alist '(("." . "~/.cache/emacs-backups")))
+(setq backup-directory-alist '(("." . "~/.cache/emacs/backup")))
+
 
 ;; disable welcome page and message
 (setq inhibit-startup-screen t)
