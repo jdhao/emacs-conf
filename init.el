@@ -153,6 +153,8 @@
 ;; disable auto-save mode
 (setq auto-save-default nil)
 
+;; change recent file save location, see https://emacs.stackexchange.com/a/19714/23435
+(setq recentf-save-file (recentf-expand-file-name "~/.cache/emacs/recentf"))
 
 ;; disable welcome page and message
 (setq inhibit-startup-screen t)
