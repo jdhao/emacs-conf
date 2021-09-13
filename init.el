@@ -31,6 +31,7 @@
 (straight-use-package 'ace-window)
 (straight-use-package 'all-the-icons)
 (straight-use-package 'dashboard)
+(straight-use-package 'no-littering)
 
 ;; start dashboard
 (dashboard-setup-startup-hook)
