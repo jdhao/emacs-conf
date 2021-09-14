@@ -131,11 +131,15 @@
 ;; builtin settings
 ;;
 
-;; show line numbers
+;; show line numbers on the left side of a window
 (global-display-line-numbers-mode)
 
 ;; show relative number like vim
 (setq display-line-numbers-type 'relative)
+
+;; show line and column number on modeline
+(setq line-number-mode t)
+(setq column-number-mode t)
 
 ;; show maximized window on startup
 (add-to-list 'initial-frame-alist '(fullscreen . maximized))
