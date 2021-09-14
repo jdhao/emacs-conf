@@ -25,6 +25,7 @@
 (straight-use-package 'evil-anzu)
 (straight-use-package 'anzu)
 (straight-use-package 'evil-matchit)
+(straight-use-package 'evil-commentary)
 (straight-use-package 'markdown-mode)
 (straight-use-package 'doom-modeline)
 (straight-use-package 'smartparens)
@@ -75,6 +76,9 @@
 
 ;; enable evil-matchit
 (global-evil-matchit-mode 1)
+
+;; enable evil-commentary mode
+(evil-commentary-mode)
 
 ;; enable smartparens mode
 (smartparens-global-mode t)
