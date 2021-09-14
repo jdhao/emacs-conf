@@ -123,6 +123,10 @@
 
 (ivy-posframe-mode 1)
 
+;;
+;; builtin settings
+;;
+
 ;; show line numbers
 (global-display-line-numbers-mode)
 
