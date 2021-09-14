@@ -24,6 +24,7 @@
 (straight-use-package 'evil)
 (straight-use-package 'evil-anzu)
 (straight-use-package 'anzu)
+(straight-use-package 'evil-matchit)
 (straight-use-package 'markdown-mode)
 (straight-use-package 'doom-modeline)
 (straight-use-package 'smartparens)
@@ -71,6 +72,9 @@
 ;; show search count and index
 (require 'evil-anzu)
 (global-anzu-mode +1)
+
+;; enable evil-matchit
+(global-evil-matchit-mode 1)
 
 ;; enable smartparens mode
 (smartparens-global-mode t)
