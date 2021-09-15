@@ -31,6 +31,9 @@
 (straight-use-package 'dashboard)
 (straight-use-package 'no-littering)
 (straight-use-package 'git-gutter)
+(straight-use-package 'flycheck)
+(straight-use-package 'org-mode)
+(straight-use-package 'magit)
 
 ;; git-gutter settings
 (global-git-gutter-mode +1)
