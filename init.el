@@ -155,8 +155,13 @@
 ;; show tabline
 (global-tab-line-mode t)
 
-;; change font size
-(set-face-attribute 'default nil :height 130)
+;; change font style and size
+(cond ((string-equal system-type "windows-nt") (set-frame-font "DejaVuSansMono NF 9"))
+      ((string-equal system-type "darwin") (print "macOS"))
+      )
+
+;; change cursor color, see https://stackoverflow.com/a/4643018/6064933
+(add-to-list 'default-frame-alist '(cursor-color . "pale green"))
 
 ;; show matching parentheses
 (show-paren-mode t)
