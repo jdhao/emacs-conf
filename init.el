@@ -20,7 +20,6 @@
 (straight-use-package 'company)
 (straight-use-package 'evil)
 (straight-use-package 'evil-anzu)
-(straight-use-package 'anzu)
 (straight-use-package 'evil-matchit)
 (straight-use-package 'evil-commentary)
 (straight-use-package 'markdown-mode)
