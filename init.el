@@ -123,6 +123,9 @@
 
 (ivy-posframe-mode 1)
 
+;; enable flycheck
+;; (global-flycheck-mode)
+
 ;;
 ;; builtin settings
 ;;
