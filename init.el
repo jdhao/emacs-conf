@@ -12,9 +12,6 @@
       (eval-print-last-sexp)))
   (load bootstrap-file nil 'nomessage))
 
-(setq package-archives '(("gnu"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
-                         ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")))
-
 ;; some packages to install
 (straight-use-package 'doom-themes)
 (straight-use-package 'ivy)
