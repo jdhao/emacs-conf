@@ -194,3 +194,6 @@
 ;; auto-reload file if it has been changed outside of Emacs, see
 ;; https://stackoverflow.com/q/1480572/6064933
 (global-auto-revert-mode t)
+
+;; set language environment
+(set-language-environment "UTF-8")
