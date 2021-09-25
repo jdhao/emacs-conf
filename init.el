@@ -36,6 +36,19 @@
 (straight-use-package 'magit)
 (straight-use-package 'avy)
 (straight-use-package 'which-key)
+(straight-use-package 'diminish)
+
+;; do not show some mode on modeline
+(diminish 'eldoc-mode)
+(diminish 'gcmh-mode)
+(diminish 'evil-commentary-mode)
+(diminish 'git-gutter-mode)
+(diminish 'anzu-mode)
+(diminish 'ivy-posframe-mode)
+(diminish 'ivy-mode)
+(diminish 'smartparens-mode)
+(diminish 'which-key-mode)
+(diminish 'company-mode)
 
 ;; enable which-key
 (setq which-key-idle-delay 0.5)
