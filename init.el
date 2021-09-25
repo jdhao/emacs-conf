@@ -23,7 +23,7 @@
 (straight-use-package 'evil-matchit)
 (straight-use-package 'evil-commentary)
 (straight-use-package 'markdown-mode)
-(straight-use-package 'doom-modeline)
+(straight-use-package 'spaceline)
 (straight-use-package 'smartparens)
 (straight-use-package 'gcmh)
 (straight-use-package 'ace-window)
@@ -34,6 +34,12 @@
 (straight-use-package 'flycheck)
 (straight-use-package 'org-mode)
 (straight-use-package 'magit)
+
+;; spaceline settings
+
+(spaceline-spacemacs-theme)
+(setq spaceline-highlight-face-func 'spaceline-highlight-face-evil-state)
+(setq powerline-default-separator 'slant)  ;; separator style
 
 ;; git-gutter settings
 (global-git-gutter-mode +1)
@@ -51,16 +57,6 @@
 ;; enable gcmh
 (gcmh-mode 1)
 
-;; doom-modeline settings
-
-;; enable doom modeline
-(doom-modeline-mode 1)
-
-;; doom-modeline height
-(setq doom-modeline-height 15)
-
-(setq doom-modeline-icon nil)
-
 ;; evil settings
 
 ;; enable evil mode
@@ -72,6 +68,9 @@
 ;; show search count and index
 (require 'evil-anzu)
 (global-anzu-mode +1)
+
+;; use spaceline to show anzu status, so we need to disable anzu's native modeline config
+(setq anzu-cons-mode-line-p nil)
 
 ;; enable evil-matchit
 (global-evil-matchit-mode 1)
