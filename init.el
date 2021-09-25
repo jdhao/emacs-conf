@@ -34,6 +34,9 @@
 (straight-use-package 'flycheck)
 (straight-use-package 'org-mode)
 (straight-use-package 'magit)
+(straight-use-package 'avy)
+;; load avy mode
+(global-set-key (kbd "C-:") 'avy-goto-char-2)
 
 ;; spaceline settings
 
