@@ -38,6 +38,7 @@
 (straight-use-package 'which-key)
 
 ;; enable which-key
+(setq which-key-idle-delay 0.5)
 (which-key-mode t)
 
 ;; load avy mode
