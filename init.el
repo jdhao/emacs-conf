@@ -35,6 +35,11 @@
 (straight-use-package 'org-mode)
 (straight-use-package 'magit)
 (straight-use-package 'avy)
+(straight-use-package 'which-key)
+
+;; enable which-key
+(which-key-mode t)
+
 ;; load avy mode
 (global-set-key (kbd "C-:") 'avy-goto-char-2)
 
