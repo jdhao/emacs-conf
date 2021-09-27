@@ -235,7 +235,7 @@
 
 ;; change font style and size
 (cond ((string-equal system-type "windows-nt") (set-frame-font "DejaVuSansMono NF 9"))
-      ((string-equal system-type "darwin") (print "macOS"))
+      ((string-equal system-type "darwin") (message "%s" "macOS"))
       )
 
 ;; change cursor color, see https://stackoverflow.com/a/4643018/6064933
