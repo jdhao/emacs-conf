@@ -72,8 +72,10 @@
 (setq spaceline-highlight-face-func 'spaceline-highlight-face-evil-state)
 (setq powerline-default-separator 'slant)  ;; separator style
 
-(spaceline-toggle-buffer-size-off)  ;; diable showing buffer size
 (spaceline-spacemacs-theme)
+;; Diable showing buffer size, should be placed below the
+;; spaceline-spacemacs-theme command.
+(spaceline-toggle-buffer-size-off)
 
 ;; git-gutter settings
 (custom-set-variables
