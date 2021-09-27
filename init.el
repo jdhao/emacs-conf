@@ -41,7 +41,6 @@
  '(blackout :host github :repo "raxod502/blackout"))  ;; customize how major and minor modes are displayed on modeline
 (straight-use-package 'super-save)
 (straight-use-package 'highlight-defined)  ;; highlight lisp symbols
-
 (straight-use-package 'pyim)
 (straight-use-package 'pyim-basedict)
 
@@ -76,6 +75,12 @@
 (setq powerline-default-separator 'slant)  ;; separator style
 
 ;; git-gutter settings
+(custom-set-variables
+ '(git-gutter:hide-gutter t))  ;; hide gutter when there is no change
+
+(custom-set-variables
+ '(git-gutter:update-interval 1))  ;; update interval
+
 (global-git-gutter-mode +1)
 
 ;; mappings for git-gutter
