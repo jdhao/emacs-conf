@@ -69,10 +69,11 @@
 (global-set-key (kbd "C-:") 'avy-goto-char-2)
 
 ;; spaceline settings
-
-(spaceline-spacemacs-theme)
 (setq spaceline-highlight-face-func 'spaceline-highlight-face-evil-state)
 (setq powerline-default-separator 'slant)  ;; separator style
+
+(spaceline-toggle-buffer-size-off)  ;; diable showing buffer size
+(spaceline-spacemacs-theme)
 
 ;; git-gutter settings
 (custom-set-variables
