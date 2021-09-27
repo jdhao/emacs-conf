@@ -39,6 +39,9 @@
 (straight-use-package 'which-key)
 (straight-use-package
  '(blackout :host github :repo "raxod502/blackout"))  ;; customize how major and minor modes are displayed on modeline
+(straight-use-package 'super-save)
+;; enable super-save
+(super-save-mode +1)
 
 ;; enable which-key
 (setq which-key-idle-delay 0.5)
