@@ -40,6 +40,11 @@
 (straight-use-package
  '(blackout :host github :repo "raxod502/blackout"))  ;; customize how major and minor modes are displayed on modeline
 (straight-use-package 'super-save)
+(straight-use-package 'highlight-defined)  ;; highlight lisp symbols
+
+;; enable hihglight-defined
+(add-hook 'emacs-lisp-mode-hook 'highlight-defined-mode)
+
 ;; enable super-save
 (super-save-mode +1)
 
