@@ -37,19 +37,8 @@
 (straight-use-package 'magit)
 (straight-use-package 'avy)
 (straight-use-package 'which-key)
-(straight-use-package 'diminish)
-
-;; do not show some mode on modeline
-(diminish 'eldoc-mode)
-(diminish 'gcmh-mode)
-(diminish 'evil-commentary-mode)
-(diminish 'git-gutter-mode)
-(diminish 'anzu-mode)
-(diminish 'ivy-posframe-mode)
-(diminish 'ivy-mode)
-(diminish 'smartparens-mode)
-(diminish 'which-key-mode)
-(diminish 'company-mode)
+(straight-use-package
+ '(blackout :host github :repo "raxod502/blackout"))  ;; customize how major and minor modes are displayed on modeline
 
 ;; enable which-key
 (setq which-key-idle-delay 0.5)
@@ -147,6 +136,20 @@
 
 ;; enable flycheck
 ;; (global-flycheck-mode)
+
+;; do not show some mode on modeline using blackout
+(blackout 'eldoc-mode)
+(blackout 'gcmh-mode)
+(blackout 'evil-commentary-mode)
+(blackout 'git-gutter-mode)
+(blackout 'anzu-mode)
+(blackout 'ivy-posframe-mode)
+(blackout 'ivy-mode)
+(blackout 'smartparens-mode)
+(blackout 'which-key-mode)
+(blackout 'company-mode)
+(blackout 'super-save-mode)
+(blackout 'emacs-lisp-mode "Elisp")
 
 ;;
 ;; builtin settings
