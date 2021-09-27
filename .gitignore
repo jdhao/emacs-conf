@@ -5,3 +5,6 @@ auto-save-list/
 straight/
 transient/
 eshell/
+.cache
+pyim/
+url/
