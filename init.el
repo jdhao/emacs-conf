@@ -42,6 +42,20 @@
 (straight-use-package 'super-save)
 (straight-use-package 'highlight-defined)  ;; highlight lisp symbols
 
+(straight-use-package 'pyim)
+(straight-use-package 'pyim-basedict)
+
+(require 'pyim)
+(require 'pyim-basedict)
+
+;; 显示5个候选词。
+(setq pyim-page-length 9)
+(setq default-input-method "pyim")
+
+(pyim-default-scheme 'quanpin)
+(global-set-key (kbd "C-\\") 'toggle-input-method)
+(pyim-basedict-enable)
+
 ;; enable hihglight-defined
 (add-hook 'emacs-lisp-mode-hook 'highlight-defined-mode)
 
