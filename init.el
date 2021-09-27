@@ -115,7 +115,7 @@
 (setq completion-cycle-threshold 1)
 
 ;; enable company mode in all buffers
-(add-hook 'after-init-hook 'global-company-mode)
+(global-company-mode)
 
 ;; use tab and s-tab to cycle forward and backward completion items
 (add-hook 'after-init-hook 'company-tng-mode)
