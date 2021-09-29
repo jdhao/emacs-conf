@@ -272,6 +272,16 @@
 ;; builtin settings
 ;;
 
+;; open init.el using custom shortcut,
+;; ref: https://emacsredux.com/blog/2013/05/18/instant-access-to-init-dot-el/
+;; https://stackoverflow.com/q/22816304/6064933
+(defun find-user-init-file ()
+  "Edit the `user-init-file', in another window."
+  (interactive)
+  (find-file user-init-file))
+
+(global-set-key (kbd "C-c I") #'find-user-init-file)
+
 ;; show line numbers on the left side of a window
 (global-display-line-numbers-mode)
 
