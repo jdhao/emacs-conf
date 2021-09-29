@@ -342,6 +342,7 @@
 (cond ((string-equal system-type "windows-nt") (set-frame-font "DejaVuSansMono NF 9"))
       ((string-equal system-type "darwin") (message "%s" "macOS")))
 
+(set-fontset-font t nil "Symbola" nil 'append)
 
 ;; change cursor color, see https://stackoverflow.com/a/4643018/6064933
 (add-to-list 'default-frame-alist '(cursor-color . "pale green"))
@@ -353,7 +354,6 @@
 (set-face-background 'show-paren-match "#ff0000")
 (set-face-attribute 'show-paren-match nil
             :weight 'bold :underline t :overline nil :slant 'normal)
-
 
 ;; show trailing white space
 (setq-default show-trailing-whitespace t)
