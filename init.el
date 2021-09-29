@@ -244,6 +244,33 @@
 ;; Lookup the current symbol at point.
 (global-set-key (kbd "C-c C-d") #'helpful-at-point)
 
+;; beautiful tabs
+(straight-use-package 'centaur-tabs)
+
+(centaur-tabs-mode t)
+
+;; show all buffer in one group
+(defun centaur-tabs-buffer-groups ()
+    "`centaur-tabs-buffer-groups' control buffers' group rules.
+
+    Group centaur-tabs with mode if buffer is derived from `eshell-mode' `emacs-lisp-mode' `dired-mode' `org-mode' `magit-mode'.
+    All buffer name start with * will group to \"Emacs\".
+    Other buffer group by `centaur-tabs-get-group-name' with project name."
+      (list "GROUP"))
+
+(centaur-tabs-headline-match)
+(setq centaur-tabs-style "bar")
+(setq centaur-tabs-set-icons t)
+(setq centaur-tabs-set-close-button nil)
+(setq centaur-tabs-gray-out-icons 'buffer)
+(setq centaur-tabs-set-bar 'over)
+(setq centaur-tabs-set-modified-marker t)
+(setq centaur-tabs-show-new-tab-button nil)
+(setq centaur-tabs--buffer-show-groups nil)
+
+(define-key evil-normal-state-map (kbd "g t") 'centaur-tabs-forward)
+(define-key evil-normal-state-map (kbd "g T") 'centaur-tabs-backward)
+
 ;; customize how major and minor modes are displayed on modeline
 (straight-use-package
  '(blackout :host github :repo "raxod502/blackout"))
@@ -308,40 +335,6 @@
 
 ;; disable menu bar
 (menu-bar-mode -1)
-
-;; tabline settings
-;; packages to consider: https://github.com/ema2159/centaur-tabs
-(global-tab-line-mode t)
-
-;; customize the tab line looks, ref: https://amitp.blogspot.com/2020/06/emacs-prettier-tab-line.html
-(setq tab-line-new-button-show nil)  ;; do not show add-new button
-(setq tab-line-close-button-show nil)  ;; do not show close button
-(setq tab-line-separator "")
-
-(defvar my/tab-height 22)
-(defvar my/tab-left (powerline-wave-right 'tab-line nil my/tab-height))
-(defvar my/tab-right (powerline-wave-left nil 'tab-line my/tab-height))
-
-(defun my/tab-line-tab-name-buffer (buffer &optional _buffers)
-  (powerline-render (list my/tab-left
-                          (format "%s" (buffer-name buffer))
-                          my/tab-right)))
-(setq tab-line-tab-name-function #'my/tab-line-tab-name-buffer)
-
-;; tab color settings
-(set-face-attribute 'tab-line nil ;; background behind tabs
-      :background "gray40"
-      :foreground "gray60" :distant-foreground "gray50"
-      :height 1.0 :box nil)
-(set-face-attribute 'tab-line-tab nil ;; active tab in another window
-      :inherit 'tab-line
-      :foreground "gray70" :background "gray90" :box nil)
-(set-face-attribute 'tab-line-tab-current nil ;; active tab in current window
-      :background "#b34cb3" :foreground "white" :box nil)
-(set-face-attribute 'tab-line-tab-inactive nil ;; inactive tab
-      :background "gray80" :foreground "black" :box nil)
-(set-face-attribute 'tab-line-highlight nil ;; mouseover
-      :background "white" :foreground 'unspecified)
 
 ;; change font style and size
 (cond (is_win (set-frame-font "DejaVuSansMono NF 9"))
