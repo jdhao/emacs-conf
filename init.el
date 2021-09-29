@@ -391,3 +391,6 @@
 
 ;; highlight current line
 (global-hl-line-mode t)
+
+;; set the default encoding and file format to utf-8 and unix, ref: https://emacs.stackexchange.com/a/5781/23435
+(setq-default buffer-file-coding-system 'utf-8-unix)
