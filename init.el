@@ -249,16 +249,70 @@
 
 (centaur-tabs-mode t)
 
-;; show all buffer in one group
+;; Ref: https://github.com/jixiuf/vmacs/blob/master/conf/conf-centaur-tabs.el#L15
 (defun centaur-tabs-buffer-groups ()
-    "`centaur-tabs-buffer-groups' control buffers' group rules.
-
+  "`centaur-tabs-buffer-groups' control buffers' group rules.
     Group centaur-tabs with mode if buffer is derived from `eshell-mode' `emacs-lisp-mode' `dired-mode' `org-mode' `magit-mode'.
     All buffer name start with * will group to \"Emacs\".
-    Other buffer group by `centaur-tabs-get-group-name' with project name."
-      (list "GROUP"))
+    Other buffer group by `projectile-project-p' with project name."
+  (list
+   (cond
+    ((derived-mode-p 'eshell-mode 'term-mode 'shell-mode 'vterm-mode)
+     "Term")
+    ((string-match-p (rx (or
+                          "\*Launch "
+                          "*dap-"
+                          ))
+                     (buffer-name))
+     "Debug")
+    ((string-match-p (rx (or
+                          "\*Async-native-compile-log\*"
+                          "\*Helm"
+                          "\*company-documentation\*"
+                          "\*helm"
+                          "\*eaf"
+                          "\*eldoc"
+                          "\*Launch "
+                          "*dap-"
+                          "*EGLOT "
+                          "\*Flymake log\*"
+                          "\*Help\*"
+                          "\*Ibuffer\*"
+                          "\*gopls::stderr\*"
+                          "\*gopls\*"
+                          "\*Compile-Log\*"
+                          "*Backtrace*"
+                          "*Package-Lint*"
+                          "\*sdcv\*"
+                          "\*tramp"
+                          "\*lsp-log\*"
+                          "\*tramp"
+                          "\*ccls"
+                          "\*vc"
+                          "\*xref"
+                          "\*Warnings*"
+                          "magit-"
+                          "\*Http"
+                          "\*Verb"
+                          "\*Org Agenda\*"
+                          "\*Async Shell Command\*"
+                          "\*Shell Command Output\*"
+                          "\*Calculator\*"
+                          "\*Calc "
+                          "\*Flycheck error messages\*"
+                          "\*Gofmt Errors\*"
+                          "\*Ediff"
+                          "\*sdcv\*"
+                          "\*osx-dictionary\*"
+                          "\*Messages\*"
+              "\*dashboard\*"
+              "\*scratch\*"
+                          ))
+                     (buffer-name))
+     "Emacs")
+    ;; ((not (vmacs-show-tabbar-p)) nil)
+    (t "Common"))))
 
-(centaur-tabs-headline-match)
 (setq centaur-tabs-style "bar")
 (setq centaur-tabs-set-icons t)
 (setq centaur-tabs-set-close-button nil)
