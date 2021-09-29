@@ -12,94 +12,97 @@
       (eval-print-last-sexp)))
   (load bootstrap-file nil 'nomessage))
 
-;; some packages to install
+;;
+;; some packages to install and their settings
+;;
+
+;; fancy icons: we need to install those icons font using command all-the-icons-install-fonts,
+;; on Windows, this command may fail, so we need to install those fonts manually.
+(straight-use-package 'all-the-icons)
+
+;; fancy stratup screen
+(straight-use-package 'dashboard)
+;; start dashboard
+(dashboard-setup-startup-hook)
+
+;; doom-themes: a collection of themes
 (straight-use-package 'doom-themes)
+(straight-use-package 'zenburn-theme)
+(straight-use-package 'solarized-theme)
+(straight-use-package 'gruvbox-theme)
+(straight-use-package 'material-theme)
+(straight-use-package 'monokai-theme)
+
+;; (load-theme 'doom-gruvbox t nil)
+(load-theme 'solarized-dark t nil)
+;; (load-theme 'zenburn t nil)
+;; (load-theme 'gruvbox t nil)
+;; (load-theme 'material t nil)
+;; (load-theme 'monokai t nil)
+
+;; ivy: fuzzy finder
 (straight-use-package 'ivy)
 (straight-use-package 'counsel)
 (straight-use-package 'ivy-posframe)
+
+;; enable ivy mode by default
+(ivy-mode 1)
+
+;; or enable counsel mode
+; (counsel-mode 1)
+
+;; rebind ctrl-x ctrl-b to use counsel-switch-buffer
+(global-set-key (kbd "C-X C-B") 'counsel-switch-buffer)
+
+;; (require 'ivy-posframe)
+;; display at `ivy-posframe-style'
+(setq ivy-posframe-display-functions-alist '((t . ivy-posframe-display)))
+
+(setq ivy-posframe-parameters
+      '((left-fringe . 4)
+        (right-fringe . 4)))
+
+(ivy-posframe-mode 1)
+
+;; change ivy posframe background color to make it stand out, see
+;; https://www.reddit.com/r/emacs/comments/jlsass/comment/gas9jaz/?utm_source=share&utm_medium=web2x&context=3
+(set-face-attribute 'ivy-posframe nil
+                    :foreground "white"
+                    ;; list of colors: http://xay-lab.nautilus.xyz/2010/09/emacs.html
+                    :background "#383838")
+
+;; auto-completion with company
 (straight-use-package 'company)
+
+;; enable company mode in all buffers
+(global-company-mode)
+
+;; use tab and s-tab to cycle forward and backward completion items
+(add-hook 'after-init-hook 'company-tng-mode)
+
+;; minimum num of typed character to trigger auto-completion
+(setq company-minimum-prefix-length 1)
+
+;; insert space between Chinese and english character
+(straight-use-package 'pangu-spacing)
+
+(global-pangu-spacing-mode 1)
+(setq pangu-spacing-real-insert-separtor t) ;; really insert the space
+
+;; prescient: sort by usage frequency
+(straight-use-package 'prescient)
+(straight-use-package 'ivy-prescient)
+(straight-use-package 'company-prescient)
+
+(ivy-prescient-mode t)
+(company-prescient-mode t)
+(prescient-persist-mode t)
+
+;; evil: vim emulation its extension packages
 (straight-use-package 'evil)
 (straight-use-package 'evil-anzu)
 (straight-use-package 'evil-matchit)
 (straight-use-package 'evil-commentary)
-(straight-use-package 'markdown-mode)
-(straight-use-package 'spaceline)
-(straight-use-package 'smartparens)
-(straight-use-package 'gcmh)
-(straight-use-package 'ace-window)
-(straight-use-package 'all-the-icons)
-(straight-use-package 'dashboard)
-(straight-use-package 'no-littering)
-(straight-use-package 'git-gutter)
-(straight-use-package 'flycheck)
-(when (string-equal system-type "darwin")
-  (straight-use-package 'org-mode))
-(straight-use-package 'magit)
-(straight-use-package 'avy)
-(straight-use-package 'which-key)
-(straight-use-package
- '(blackout :host github :repo "raxod502/blackout"))  ;; customize how major and minor modes are displayed on modeline
-(straight-use-package 'super-save)
-(straight-use-package 'highlight-defined)  ;; highlight lisp symbols
-(straight-use-package 'pyim)
-(straight-use-package 'pyim-basedict)
-
-(require 'pyim)
-(require 'pyim-basedict)
-
-;; 显示5个候选词。
-(setq pyim-page-length 9)
-(setq default-input-method "pyim")
-
-(pyim-default-scheme 'quanpin)
-(global-set-key (kbd "C-\\") 'toggle-input-method)
-(pyim-basedict-enable)
-
-;; enable hihglight-defined
-(add-hook 'emacs-lisp-mode-hook 'highlight-defined-mode)
-
-;; enable super-save
-(super-save-mode +1)
-
-;; enable which-key
-(setq which-key-idle-delay 0.5)
-(which-key-mode t)
-
-;; load avy mode
-(global-set-key (kbd "C-:") 'avy-goto-char-2)
-
-;; spaceline settings
-(setq spaceline-highlight-face-func 'spaceline-highlight-face-evil-state)
-(setq powerline-default-separator 'slant)  ;; separator style
-
-(spaceline-spacemacs-theme)
-;; Diable showing buffer size, should be placed below the
-;; spaceline-spacemacs-theme command.
-(spaceline-toggle-buffer-size-off)
-
-;; git-gutter settings
-(custom-set-variables
- '(git-gutter:hide-gutter t))  ;; hide gutter when there is no change
-
-(custom-set-variables
- '(git-gutter:update-interval 1))  ;; update interval
-
-(global-git-gutter-mode +1)
-
-;; mappings for git-gutter
-(global-set-key (kbd "C-x ]") 'git-gutter:next-hunk)
-(global-set-key (kbd "C-x [") 'git-gutter:previous-hunk)
-
-;; start dashboard
-(dashboard-setup-startup-hook)
-
-;; key binding for ace-window
-(global-set-key (kbd "M-o") 'ace-window)
-
-;; enable gcmh
-(gcmh-mode 1)
-
-;; evil settings
 
 ;; enable evil mode
 (evil-mode 1)
@@ -120,52 +123,125 @@
 ;; enable evil-commentary mode
 (evil-commentary-mode)
 
+;; markdown mode
+(straight-use-package 'markdown-mode)
+
+;; spaceline: a beautiful mode line
+(straight-use-package 'spaceline)
+;; (straight-use-package 'spaceline-all-the-icons)
+
+;; spaceline settings
+(setq spaceline-highlight-face-func 'spaceline-highlight-face-evil-state)
+(setq powerline-default-separator 'slant)  ;; separator style
+
+(spaceline-spacemacs-theme)
+;; Diable showing buffer size, should be placed below the
+;; spaceline-spacemacs-theme command.
+(spaceline-toggle-buffer-size-off)
+
+;; use fancy icons on mode line (currently does not work on Windows)
+;; (spaceline-all-the-icons-theme)
+
+;; smartparens: auto pair insertion
+(straight-use-package 'smartparens)
+
 ;; enable smartparens mode
 (smartparens-global-mode t)
 
-;; treat all installed themes as safe
-(setq custom-safe-themes t)
+;; gcmh: auto-gc mode
+(straight-use-package 'gcmh)
+(gcmh-mode 1)
 
-(load-theme 'doom-gruvbox t nil)
+;; faster window jump
+(straight-use-package 'ace-window)
 
-;; show file path on title
-(setq frame-title-format
-      `((buffer-file-name "%f" "%b")
-        ,(format " - GNU Emacs %s" emacs-version)))
+;; key binding for ace-window
+(global-set-key (kbd "M-o") 'ace-window)
 
-;; use tab to cycle through the completion item
-(setq completion-cycle-threshold 1)
+;; do not litter .emacs.d dir (TODO: settings?)
+(straight-use-package 'no-littering)
 
-;; enable company mode in all buffers
-(global-company-mode)
+;; show git gutter on left side
+(straight-use-package 'git-gutter)
 
-;; use tab and s-tab to cycle forward and backward completion items
-(add-hook 'after-init-hook 'company-tng-mode)
+;; git-gutter settings
 
-;; minimum num of typed character to trigger auto-completion
-(setq company-minimum-prefix-length 1)
+(when (string-equal system-type "darwin")
+    ;; the following does not work for Windows since there is no diff executable
+    (custom-set-variables
+    '(git-gutter:update-interval 1)))
 
-;; enable ivy mode by default
-(ivy-mode 1)
+(custom-set-variables
+    '(git-gutter:hide-gutter t))
 
-;; or enable counsel mode
-; (counsel-mode 1)
+(global-git-gutter-mode +1)
 
-;; rebind ctrl-x ctrl-b to use counsel-switch-buffer
-(global-set-key (kbd "C-X C-B") 'counsel-switch-buffer)
+;; mappings for git-gutter
+(global-set-key (kbd "C-x ]") 'git-gutter:next-hunk)
+(global-set-key (kbd "C-x [") 'git-gutter:previous-hunk)
 
-;; (require 'ivy-posframe)
-;; display at `ivy-posframe-style'
-(setq ivy-posframe-display-functions-alist '((t . ivy-posframe-display)))
-
-(setq ivy-posframe-parameters
-      '((left-fringe . 8)
-        (right-fringe . 8)))
-
-(ivy-posframe-mode 1)
-
+;; linting
+(straight-use-package 'flycheck)
 ;; enable flycheck
 ;; (global-flycheck-mode)
+
+;; orgmode
+(when (string-equal system-type "darwin")
+  (straight-use-package 'org-mode))
+
+;; powerful git client
+(straight-use-package 'magit)
+
+;; faster buffer jump (like vim-sneak)
+(straight-use-package 'avy)
+;; load avy mode
+(global-set-key (kbd "C-:") 'avy-goto-char-2)
+
+;; hint key combinations
+(straight-use-package 'which-key)
+;; enable which-key
+(setq which-key-idle-delay 0.5)
+(which-key-mode t)
+
+;; auto-save when focus lost
+(straight-use-package 'super-save)
+;; enable super-save
+(super-save-mode +1)
+
+(setq super-save-auto-save-when-idle t)
+
+;; highlight lisp symbols
+(straight-use-package 'highlight-defined)
+;; enable hihglight-defined
+(add-hook 'emacs-lisp-mode-hook 'highlight-defined-mode)
+
+;; 输入中文
+(straight-use-package 'pyim)
+(straight-use-package 'pyim-basedict)
+(require 'pyim)
+(require 'pyim-basedict)
+
+;; 显示 5 个候选词。
+(setq pyim-page-length 9)
+(setq-default default-input-method "pyim")
+
+(pyim-default-scheme 'quanpin)
+(global-set-key (kbd "C-\\") 'toggle-input-method)
+(pyim-basedict-enable)
+
+;; more helpful help window
+(straight-use-package 'helpful)
+
+;; bind keys for helpful
+(global-set-key (kbd "C-h f") #'helpful-callable)
+(global-set-key (kbd "C-h v") #'helpful-variable)
+(global-set-key (kbd "C-h k") #'helpful-key)
+;; Lookup the current symbol at point.
+(global-set-key (kbd "C-c C-d") #'helpful-at-point)
+
+;; customize how major and minor modes are displayed on modeline
+(straight-use-package
+ '(blackout :host github :repo "raxod502/blackout"))
 
 ;; do not show some mode on modeline using blackout
 (blackout 'eldoc-mode)
@@ -180,6 +256,17 @@
 (blackout 'company-mode)
 (blackout 'super-save-mode)
 (blackout 'emacs-lisp-mode "Elisp")
+
+;; treat all installed themes as safe
+(setq custom-safe-themes t)
+
+;; show file path on title
+(setq frame-title-format
+      `((buffer-file-name "%f" "%b")
+        ,(format " - GNU Emacs %s" emacs-version)))
+
+;; use tab to cycle through the completion item
+(setq completion-cycle-threshold 1)
 
 ;;
 ;; builtin settings
