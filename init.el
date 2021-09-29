@@ -340,8 +340,8 @@
 
 ;; change font style and size
 (cond ((string-equal system-type "windows-nt") (set-frame-font "DejaVuSansMono NF 9"))
-      ((string-equal system-type "darwin") (message "%s" "macOS"))
-      )
+      ((string-equal system-type "darwin") (message "%s" "macOS")))
+
 
 ;; change cursor color, see https://stackoverflow.com/a/4643018/6064933
 (add-to-list 'default-frame-alist '(cursor-color . "pale green"))
