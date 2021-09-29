@@ -1,3 +1,8 @@
+;; the system type variable
+(defconst is_mac (string-equal system-type "darwin"))
+(defconst is_linux (string-equal system-type "gnu/linux"))
+(defconst is_win (string-equal system-type "windows-nt"))
+
 ;; install straight package manager
 (defvar bootstrap-version)
 (let ((bootstrap-file
@@ -166,7 +171,7 @@
 
 ;; git-gutter settings
 
-(when (string-equal system-type "darwin")
+(when is_mac
     ;; the following does not work for Windows since there is no diff executable
     (custom-set-variables
     '(git-gutter:update-interval 1)))
@@ -186,7 +191,7 @@
 ;; (global-flycheck-mode)
 
 ;; orgmode
-(when (string-equal system-type "darwin")
+(when is_mac
   (straight-use-package 'org-mode))
 
 ;; powerful git client
@@ -339,8 +344,8 @@
       :background "white" :foreground 'unspecified)
 
 ;; change font style and size
-(cond ((string-equal system-type "windows-nt") (set-frame-font "DejaVuSansMono NF 9"))
-      ((string-equal system-type "darwin") (message "%s" "macOS")))
+(cond (is_win (set-frame-font "DejaVuSansMono NF 9"))
+      (is_mac (message "%s" "macOS")))
 
 (set-fontset-font t nil "Symbola" nil 'append)
 
