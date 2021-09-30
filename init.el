@@ -38,12 +38,11 @@
 (straight-use-package 'material-theme)
 (straight-use-package 'monokai-theme)
 
-;; (load-theme 'doom-gruvbox t nil)
-(load-theme 'solarized-dark t nil)
-;; (load-theme 'zenburn t nil)
-;; (load-theme 'gruvbox t nil)
-;; (load-theme 'material t nil)
-;; (load-theme 'monokai t nil)
+;; load a random theme
+(defvar custom_themes '(gruvbox zenburn monokai solarized-dark material))
+(defvar theme_num (length custom_themes))
+(defvar cur_theme (nth (random theme_num) custom_themes))
+(load-theme cur_theme t nil)
 
 ;; ivy: fuzzy finder
 (straight-use-package 'ivy)
