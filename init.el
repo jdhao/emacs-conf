@@ -207,7 +207,7 @@
 ;; hint key combinations
 (straight-use-package 'which-key)
 ;; enable which-key
-(setq which-key-idle-delay 0.5)
+(setq which-key-idle-delay 0.8)
 (which-key-mode t)
 
 ;; auto-save when focus lost
