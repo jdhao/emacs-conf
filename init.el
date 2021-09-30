@@ -151,6 +151,9 @@
 
 ;; enable smartparens mode
 (smartparens-global-mode t)
+;; disable auto insert for some keys in smartparen mode,
+;; ref: https://github.com/Fuco1/smartparens/issues/932
+(sp-pair "'" nil :actions :rem)
 
 ;; gcmh: auto-gc mode
 (straight-use-package 'gcmh)
