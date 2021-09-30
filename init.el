@@ -320,7 +320,12 @@
 (setq centaur-tabs-set-close-button nil)
 (setq centaur-tabs-gray-out-icons 'buffer)
 (setq centaur-tabs-set-bar 'over)
-(setq centaur-tabs-set-modified-marker t)
+
+(when is_mac
+  (setq centaur-tabs-set-modified-marker t))
+(when is_win
+  (centaur-tabs-change-fonts "arial" 100))
+
 (setq centaur-tabs-show-new-tab-button nil)
 (setq centaur-tabs--buffer-show-groups nil)
 
