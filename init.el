@@ -63,9 +63,13 @@
 (straight-use-package 'ivy)
 (straight-use-package 'counsel)
 (straight-use-package 'ivy-posframe)
+(straight-use-package 'ivy-rich)
 
 ;; enable ivy mode by default
 (ivy-mode 1)
+
+;; enable ivy-rich mode
+(ivy-rich-mode t)
 
 ;; or enable counsel mode
 ; (counsel-mode 1)
