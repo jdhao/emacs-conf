@@ -76,6 +76,7 @@
 
 ;; rebind ctrl-x ctrl-b to use counsel-switch-buffer
 (global-set-key (kbd "C-X C-B") 'counsel-switch-buffer)
+(global-set-key (kbd "M-x") 'counsel-M-x)
 
 ;; (require 'ivy-posframe)
 ;; display at `ivy-posframe-style'
