@@ -106,7 +106,7 @@
 (add-hook 'after-init-hook 'company-tng-mode)
 
 ;; minimum num of typed character to trigger auto-completion
-(setq company-minimum-prefix-length 1)
+(setq company-minimum-prefix-length 2)
 
 ;; insert space between Chinese and english character
 (straight-use-package 'pangu-spacing)
