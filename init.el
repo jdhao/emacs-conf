@@ -418,7 +418,7 @@
 
 ;; change font style and size
 (cond (is_win (set-frame-font "DejaVuSansMono NF 9"))
-      (is_mac (message "%s" "macOS")))
+      (is_mac (set-face-attribute 'default nil :height 130)))
 
 (set-fontset-font t nil "Symbola" nil 'append)
 
