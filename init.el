@@ -30,6 +30,15 @@
 ;; start dashboard
 (dashboard-setup-startup-hook)
 
+;; search key words in the browser
+(straight-use-package 'engine-mode)
+(engine-mode t)
+
+;; use ctrl-l-/-g to search
+(defengine google
+  "http://www.google.com/search?ie=utf-8&oe=utf-8&q=%s"
+  :keybinding "g")
+
 ;; doom-themes: a collection of themes
 (straight-use-package 'doom-themes)
 (straight-use-package 'zenburn-theme)
@@ -40,9 +49,15 @@
 
 ;; load a random theme
 (defvar custom_themes '(gruvbox zenburn monokai solarized-dark material))
-(defvar theme_num (length custom_themes))
-(defvar cur_theme (nth (random theme_num) custom_themes))
-(load-theme cur_theme t nil)
+
+(defun random-color-theme ()
+  "Load a random color theme."
+  (interactive)
+  (random t)
+  (load-theme
+   (nth (random (length custom_themes)) custom_themes) t))
+
+(random-color-theme)
 
 ;; ivy: fuzzy finder
 (straight-use-package 'ivy)
