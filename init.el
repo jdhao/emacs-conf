@@ -3,6 +3,108 @@
 (defconst is_linux (string-equal system-type "gnu/linux"))
 (defconst is_win (string-equal system-type "windows-nt"))
 
+;;
+;; builtin settings
+;;
+
+;; treat all installed themes as safe
+(setq custom-safe-themes t)
+
+;; show file path on title
+(setq frame-title-format
+      `((buffer-file-name "%f" "%b")
+        ,(format " - GNU Emacs %s" emacs-version)))
+
+;; use tab to cycle through the completion item
+(setq completion-cycle-threshold 1)
+
+;; open init.el using custom shortcut,
+;; ref: https://emacsredux.com/blog/2013/05/18/instant-access-to-init-dot-el/
+;; https://stackoverflow.com/q/22816304/6064933
+(defun find-user-init-file ()
+  "Edit the `user-init-file', in another window."
+  (interactive)
+  (find-file user-init-file))
+
+(global-set-key (kbd "C-c I") #'find-user-init-file)
+
+;; show line numbers on the left side of a window
+(global-display-line-numbers-mode)
+
+;; show relative number like vim
+(setq display-line-numbers-type 'relative)
+
+;; show line and column number on modeline
+(setq line-number-mode t)
+(setq column-number-mode t)
+
+;; show maximized window on startup
+(add-to-list 'initial-frame-alist '(fullscreen . maximized))
+
+;; disable scroll bar
+(toggle-scroll-bar -1)
+
+;; disable toolbar
+(tool-bar-mode -1)
+
+;; disable menu bar
+(menu-bar-mode -1)
+
+;; change font style and size
+(cond (is_win (set-frame-font "DejaVuSansMono NF 9"))
+      (is_mac (set-face-attribute 'default nil :height 130)))
+
+(set-fontset-font t nil "Symbola" nil 'append)
+
+;; change cursor color, see https://stackoverflow.com/a/4643018/6064933
+(add-to-list 'default-frame-alist '(cursor-color . "pale green"))
+
+;; show matching parentheses
+(show-paren-mode t)
+
+;; the style for matching parentheses
+(set-face-background 'show-paren-match "#ff0000")
+(set-face-attribute 'show-paren-match nil
+            :weight 'bold :underline t :overline nil :slant 'normal)
+
+;; show trailing white space
+(setq-default show-trailing-whitespace t)
+;; remove trailing white space on save, ref: https://emacs.stackexchange.com/a/33720/23435
+(add-hook 'before-save-hook 'delete-trailing-whitespace)
+
+;; change backup settings
+(setq backup-directory-alist '(("." . "~/.cache/emacs/backup")))
+
+;; disable auto-save mode
+(setq auto-save-default nil)
+
+;; disable welcome page and message
+(setq inhibit-startup-screen t)
+(setq inhibit-startup-message t)
+
+;; disable echo area message
+(setq inhibit-startup-echo-area-message t)
+
+;; auto-reload file if it has been changed outside of Emacs, see
+;; https://stackoverflow.com/q/1480572/6064933
+(global-auto-revert-mode t)
+
+;; set language environment
+(set-language-environment "UTF-8")
+
+;; do not recenter cursorline eagerly
+(setq scroll-conservatively 20)
+
+;; do not ring bell (it is annoying)
+(setq ring-bell-function 'ignore)
+
+;; highlight current line
+(global-hl-line-mode t)
+
+;; set the default encoding and file format to utf-8 and unix, ref: https://emacs.stackexchange.com/a/5781/23435
+(setq-default buffer-file-coding-system 'utf-8-unix)
+
+
 ;; install straight package manager
 (defvar bootstrap-version)
 (let ((bootstrap-file
@@ -29,6 +131,9 @@
 (straight-use-package 'dashboard)
 ;; start dashboard
 (dashboard-setup-startup-hook)
+
+;; change recent file save location, see https://emacs.stackexchange.com/a/19714/23435
+(setq recentf-save-file (recentf-expand-file-name "~/.cache/emacs/recentf"))
 
 ;; search key words in the browser
 (straight-use-package 'engine-mode)
@@ -374,107 +479,3 @@
 (blackout 'company-mode)
 (blackout 'super-save-mode)
 (blackout 'emacs-lisp-mode "Elisp")
-
-;; treat all installed themes as safe
-(setq custom-safe-themes t)
-
-;; show file path on title
-(setq frame-title-format
-      `((buffer-file-name "%f" "%b")
-        ,(format " - GNU Emacs %s" emacs-version)))
-
-;; use tab to cycle through the completion item
-(setq completion-cycle-threshold 1)
-
-;;
-;; builtin settings
-;;
-
-;; open init.el using custom shortcut,
-;; ref: https://emacsredux.com/blog/2013/05/18/instant-access-to-init-dot-el/
-;; https://stackoverflow.com/q/22816304/6064933
-(defun find-user-init-file ()
-  "Edit the `user-init-file', in another window."
-  (interactive)
-  (find-file user-init-file))
-
-(global-set-key (kbd "C-c I") #'find-user-init-file)
-
-;; show line numbers on the left side of a window
-(global-display-line-numbers-mode)
-
-;; show relative number like vim
-(setq display-line-numbers-type 'relative)
-
-;; show line and column number on modeline
-(setq line-number-mode t)
-(setq column-number-mode t)
-
-;; show maximized window on startup
-(add-to-list 'initial-frame-alist '(fullscreen . maximized))
-
-;; disable scroll bar
-(toggle-scroll-bar -1)
-
-;; disable toolbar
-(tool-bar-mode -1)
-
-;; disable menu bar
-(menu-bar-mode -1)
-
-;; change font style and size
-(cond (is_win (set-frame-font "DejaVuSansMono NF 9"))
-      (is_mac (set-face-attribute 'default nil :height 130)))
-
-(set-fontset-font t nil "Symbola" nil 'append)
-
-;; change cursor color, see https://stackoverflow.com/a/4643018/6064933
-(add-to-list 'default-frame-alist '(cursor-color . "pale green"))
-
-;; show matching parentheses
-(show-paren-mode t)
-
-;; the style for matching parentheses
-(set-face-background 'show-paren-match "#ff0000")
-(set-face-attribute 'show-paren-match nil
-            :weight 'bold :underline t :overline nil :slant 'normal)
-
-;; show trailing white space
-(setq-default show-trailing-whitespace t)
-;; remove trailing white space on save, ref: https://emacs.stackexchange.com/a/33720/23435
-(add-hook 'before-save-hook 'delete-trailing-whitespace)
-
-;; change backup settings
-(setq backup-directory-alist '(("." . "~/.cache/emacs/backup")))
-
-;; disable auto-save mode
-(setq auto-save-default nil)
-
-;; change recent file save location, see https://emacs.stackexchange.com/a/19714/23435
-(setq recentf-save-file (recentf-expand-file-name "~/.cache/emacs/recentf"))
-
-;; disable welcome page and message
-(setq inhibit-startup-screen t)
-(setq inhibit-startup-message t)
-
-;; disable echo area message
-(setq inhibit-startup-echo-area-message t)
-
-;; auto-reload file if it has been changed outside of Emacs, see
-;; https://stackoverflow.com/q/1480572/6064933
-(global-auto-revert-mode t)
-
-;; set language environment
-(set-language-environment "UTF-8")
-
-;; do not recenter cursorline eagerly
-(setq scroll-conservatively 20)
-
-;; do not ring bell (it is annoying)
-(setq ring-bell-function 'ignore)
-
-;; highlight current line
-(global-hl-line-mode t)
-
-;; set the default encoding and file format to utf-8 and unix, ref: https://emacs.stackexchange.com/a/5781/23435
-(setq-default buffer-file-coding-system 'utf-8-unix)
