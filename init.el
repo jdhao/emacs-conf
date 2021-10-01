@@ -48,14 +48,15 @@
 (straight-use-package 'monokai-theme)
 
 ;; load a random theme
-(defvar custom_themes '(gruvbox zenburn monokai solarized-dark material))
+(defvar custom-themes '(gruvbox zenburn monokai solarized-dark material))
 
 (defun random-color-theme ()
   "Load a random color theme."
   (interactive)
   (random t)
-  (load-theme
-   (nth (random (length custom_themes)) custom_themes) t))
+  (setq cur-theme (nth (random (length custom-themes)) custom-themes))
+  (load-theme cur-theme t)
+  (message "Loaded Theme: %s" (symbol-name cur-theme)))
 
 (random-color-theme)
 
