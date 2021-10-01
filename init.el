@@ -134,6 +134,10 @@
 
 ;; mimic vim's ctrl-u for evil mode, see https://stackoverflow.com/q/14302171/6064933
 (define-key evil-normal-state-map (kbd "C-u") 'evil-scroll-up)
+;; close a window
+(define-key evil-normal-state-map (kbd ", q") 'delete-window)
+;; save buffer
+(define-key evil-normal-state-map (kbd ", w") 'save-buffer)
 
 ;; show search count and index
 (require 'evil-anzu)
@@ -205,8 +209,8 @@
 (global-git-gutter-mode +1)
 
 ;; mappings for git-gutter
-(global-set-key (kbd "C-x ]") 'git-gutter:next-hunk)
-(global-set-key (kbd "C-x [") 'git-gutter:previous-hunk)
+(define-key evil-normal-state-map (kbd "] c") 'git-gutter:next-hunk)
+(define-key evil-normal-state-map (kbd "[ c") 'git-gutter:previous-hunk)
 
 ;; linting
 (straight-use-package 'flycheck)
