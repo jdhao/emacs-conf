@@ -1,7 +1,7 @@
 ;; the system type variable
-(defconst is_mac (string-equal system-type "darwin"))
-(defconst is_linux (string-equal system-type "gnu/linux"))
-(defconst is_win (string-equal system-type "windows-nt"))
+(defconst is-mac (string-equal system-type "darwin"))
+(defconst is-linux (string-equal system-type "gnu/linux"))
+(defconst is-win (string-equal system-type "windows-nt"))
 
 ;;
 ;; builtin settings
@@ -51,8 +51,8 @@
 (menu-bar-mode -1)
 
 ;; change font style and size
-(cond (is_win (set-frame-font "DejaVuSansMono NF 9"))
-      (is_mac (set-face-attribute 'default nil :height 130)))
+(cond (is-win (set-frame-font "DejaVuSansMono NF 9"))
+      (is-mac (set-face-attribute 'default nil :height 130)))
 
 (set-fontset-font t nil "Symbola" nil 'append)
 
@@ -303,7 +303,7 @@
 
 ;; git-gutter settings
 
-(when is_mac
+(when is-mac
     ;; the following does not work for Windows since there is no diff executable
     (custom-set-variables
     '(git-gutter:update-interval 1)))
@@ -323,7 +323,7 @@
 ;; (global-flycheck-mode)
 
 ;; orgmode
-(when is_mac
+(when is-mac
   (straight-use-package 'org-mode))
 
 ;; powerful git client
@@ -451,9 +451,9 @@
 (setq centaur-tabs-gray-out-icons 'buffer)
 (setq centaur-tabs-set-bar 'over)
 
-(when is_mac
+(when is-mac
   (setq centaur-tabs-set-modified-marker t))
-(when is_win
+(when is-win
   (centaur-tabs-change-fonts "arial" 100))
 
 (setq centaur-tabs-show-new-tab-button nil)
