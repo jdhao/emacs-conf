@@ -10,6 +10,8 @@
 (setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
 (setq scroll-preserve-screen-position t) ;; preserve column position when scrolling
 
+;; Use y/n instead of yes/no
+(fset 'yes-or-no-p 'y-or-n-p)
 
 ;; treat all installed themes as safe
 (setq custom-safe-themes t)
