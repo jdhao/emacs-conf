@@ -562,6 +562,7 @@
  '(blackout :host github :repo "raxod502/blackout"))
 
 ;; do not show some mode on modeline using blackout
+;; for minor modes
 (blackout 'eldoc-mode)
 (blackout 'gcmh-mode)
 (blackout 'evil-commentary-mode)
@@ -573,4 +574,9 @@
 (blackout 'which-key-mode)
 (blackout 'company-mode)
 (blackout 'super-save-mode)
+(blackout 'undo-tree-mode)
+(blackout 'visual-line-mode)
+(blackout 'global-whitespace-mode)
+
+;; for major modes
 (blackout 'emacs-lisp-mode "Elisp")
