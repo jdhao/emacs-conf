@@ -38,6 +38,10 @@
 
 (global-set-key (kbd "C-c I") #'find-user-init-file)
 
+;; make home and end behave
+(global-set-key (kbd "<home>") 'move-beginning-of-line)
+(global-set-key (kbd "<end>") 'move-end-of-line)
+
 ;; show line numbers on the left side of a window
 (global-display-line-numbers-mode)
 
