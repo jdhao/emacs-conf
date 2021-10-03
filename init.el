@@ -16,6 +16,10 @@
 ;; treat all installed themes as safe
 (setq custom-safe-themes t)
 
+;; visual line mode
+(global-visual-line-mode 1)
+(setq visual-line-fringe-indicators '(left-curly-arrow right-curly-arrow))
+
 ;; show file path on title
 (setq frame-title-format
       `((buffer-file-name "%f" "%b")
