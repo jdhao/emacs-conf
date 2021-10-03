@@ -471,7 +471,7 @@
 ;; Lookup the current symbol at point.
 (global-set-key (kbd "C-c C-d") #'helpful-at-point)
 
-;; beautiful tabs
+;; beautiful tablines
 (straight-use-package 'centaur-tabs)
 
 (centaur-tabs-mode t)
