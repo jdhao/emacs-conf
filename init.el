@@ -279,8 +279,9 @@
 (straight-use-package 'evil-commentary)
 (straight-use-package 'undo-tree)
 
-;; make j and k respect visual line mode
-(setq evil-respect-visual-line-mode t)
+;; make j and k respect visual line mode.
+;; note that it breaks evil-commentry, see https://github.com/linktohack/evil-commentary/issues/23.
+;; (setq evil-respect-visual-line-mode t)
 
 ;; enable evil mode
 (evil-mode 1)
