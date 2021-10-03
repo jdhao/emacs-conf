@@ -279,6 +279,8 @@
 (straight-use-package 'evil-commentary)
 (straight-use-package 'undo-tree)
 
+;; make j and k respect visual line mode
+(setq evil-respect-visual-line-mode t)
 
 ;; enable evil mode
 (evil-mode 1)
@@ -298,6 +300,19 @@
 ;; don't need C-n, C-p (inteferes with company-quickhelp)
 (define-key evil-insert-state-map (kbd "C-n") nil)
 (define-key evil-insert-state-map (kbd "C-p") nil)
+
+;; continuous shift of block of text, ref: https://alexpeits.github.io/emacs.d/#orgaf53a91
+(define-key evil-visual-state-map (kbd "<") #'(lambda ()
+                                                (interactive)
+                                                (progn
+                                                    (call-interactively 'evil-shift-left)
+                                                    (execute-kbd-macro "gv"))))
+
+(define-key evil-visual-state-map (kbd ">") #'(lambda ()
+                                                (interactive)
+                                                (progn
+                                                (call-interactively 'evil-shift-right)
+                                                (execute-kbd-macro "gv"))))
 
 ;; show search count and index
 (require 'evil-anzu)
