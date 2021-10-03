@@ -259,6 +259,10 @@
 (global-pangu-spacing-mode 1)
 (setq pangu-spacing-real-insert-separtor t) ;; really insert the space
 
+;; right click menu
+(straight-use-package 'mouse3)
+(global-set-key (kbd "<mouse-3>") 'mouse3-popup-menu)
+
 ;; prescient: sort by usage frequency
 (straight-use-package 'prescient)
 (straight-use-package 'ivy-prescient)
