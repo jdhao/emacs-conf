@@ -248,6 +248,11 @@
 ;; minimum num of typed character to trigger auto-completion
 (setq company-minimum-prefix-length 2)
 
+(setq company-idle-delay 0.1)
+
+;; use meta key and number to insert
+(setq company-show-quick-access 'left)
+
 ;; insert space between Chinese and english character
 (straight-use-package 'pangu-spacing)
 
