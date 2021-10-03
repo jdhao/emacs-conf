@@ -112,7 +112,8 @@
 (setq scroll-conservatively 20)
 
 ;; do not ring bell (it is annoying)
-(setq ring-bell-function 'ignore)
+(setq visible-bell t
+ ring-bell-function 'ignore)
 
 ;; highlight current line
 (global-hl-line-mode t)
