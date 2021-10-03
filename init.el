@@ -3,9 +3,9 @@
 (defconst is-linux (string-equal system-type "gnu/linux"))
 (defconst is-win (string-equal system-type "windows-nt"))
 
-;;
-;; builtin settings
-;;
+;;;; builtin settings
+(setq debug-on-error t)
+
 
 ;; treat all installed themes as safe
 (setq custom-safe-themes t)
