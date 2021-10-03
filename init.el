@@ -190,6 +190,12 @@
 (straight-use-package 'rainbow-delimiters)
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 
+;; imemu-list: emacs's tagbar?
+(straight-use-package 'imenu-list)
+(setq imenu-list-auto-resize t)
+
+(global-set-key (kbd "C-'") 'imenu-list-smart-toggle)
+
 ;; ivy: fuzzy finder
 (straight-use-package 'ivy)
 (straight-use-package 'counsel)
