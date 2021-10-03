@@ -53,6 +53,8 @@
 (setq column-number-mode t)
 
 ;; show maximized window on startup
+(setq frame-resize-pixelwise t
+      x-frame-normalize-before-maximize t)
 (add-to-list 'initial-frame-alist '(fullscreen . maximized))
 
 ;; disable scroll bar
