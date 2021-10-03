@@ -186,6 +186,10 @@
 
 (random-color-theme)
 
+;; rainbow delimiters
+(straight-use-package 'rainbow-delimiters)
+(add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
+
 ;; ivy: fuzzy finder
 (straight-use-package 'ivy)
 (straight-use-package 'counsel)
