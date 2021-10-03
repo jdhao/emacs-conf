@@ -128,6 +128,7 @@
 ;; ref: https://emacs.stackexchange.com/a/5781/23435
 (setq-default buffer-file-coding-system 'utf-8-unix)
 
+;;;; some packages to install and their settings
 
 ;; install straight package manager
 (defvar bootstrap-version)
@@ -142,10 +143,6 @@
       (goto-char (point-max))
       (eval-print-last-sexp)))
   (load bootstrap-file nil 'nomessage))
-
-;;
-;; some packages to install and their settings
-;;
 
 ;; fancy icons: we need to install those icons font using command all-the-icons-install-fonts,
 ;; on Windows, this command may fail, so we need to install those fonts manually.
