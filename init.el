@@ -277,9 +277,16 @@
 (straight-use-package 'evil-anzu)
 (straight-use-package 'evil-matchit)
 (straight-use-package 'evil-commentary)
+(straight-use-package 'undo-tree)
+
 
 ;; enable evil mode
 (evil-mode 1)
+
+;; use undo-tree for redo,
+;; https://www.reddit.com/r/emacs/comments/n1pibp/comment/gwei7fw/
+(evil-set-undo-system 'undo-tree)
+(global-undo-tree-mode 1)
 
 ;; mimic vim's ctrl-u for evil mode, see https://stackoverflow.com/q/14302171/6064933
 (define-key evil-normal-state-map (kbd "C-u") 'evil-scroll-up)
