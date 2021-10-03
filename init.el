@@ -234,9 +234,13 @@
 
 ;; auto-completion with company
 (straight-use-package 'company)
+(straight-use-package 'company-quickhelp)
 
 ;; enable company mode in all buffers
 (global-company-mode)
+
+;; enable company-quickhelp
+(company-quickhelp-mode)
 
 ;; use tab and s-tab to cycle forward and backward completion items
 (add-hook 'after-init-hook 'company-tng-mode)
@@ -274,6 +278,10 @@
 (define-key evil-normal-state-map (kbd ", q") 'delete-window)
 ;; save buffer
 (define-key evil-normal-state-map (kbd ", w") 'save-buffer)
+
+;; don't need C-n, C-p (inteferes with company-quickhelp)
+(define-key evil-insert-state-map (kbd "C-n") nil)
+(define-key evil-insert-state-map (kbd "C-p") nil)
 
 ;; show search count and index
 (require 'evil-anzu)
