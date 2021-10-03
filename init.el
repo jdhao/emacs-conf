@@ -6,6 +6,10 @@
 ;;;; builtin settings
 (setq debug-on-error t)
 
+(setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
+(setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
+(setq scroll-preserve-screen-position t) ;; preserve column position when scrolling
+
 
 ;; treat all installed themes as safe
 (setq custom-safe-themes t)
