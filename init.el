@@ -160,7 +160,7 @@
 (straight-use-package 'engine-mode)
 (engine-mode t)
 
-;; use ctrl-l-/-g to search
+;; use ctrl-x-/-g to search
 (defengine google
   "http://www.google.com/search?ie=utf-8&oe=utf-8&q=%s"
   :keybinding "g")
