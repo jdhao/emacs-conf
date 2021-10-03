@@ -330,6 +330,8 @@
 ;; markdown mode
 (straight-use-package 'markdown-mode)
 
+(setq markdown-enable-math t)
+
 ;; spaceline: a beautiful mode line
 (straight-use-package 'spaceline)
 ;; (straight-use-package 'spaceline-all-the-icons)
