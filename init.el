@@ -132,6 +132,13 @@
 ;; ref: https://emacs.stackexchange.com/a/5781/23435
 (setq-default buffer-file-coding-system 'utf-8-unix)
 
+;; emoji support for macOS, ref: https://github.crookster.org/emacs27-from-homebrew-on-macos-with-emoji/
+(if (version< "27.0" emacs-version)
+           (set-fontset-font
+            "fontset-default" 'unicode "Apple Color Emoji" nil 'prepend)
+         (set-fontset-font
+          t 'symbol (font-spec :family "Apple Color Emoji") nil 'prepend))
+
 ;;;; some packages to install and their settings
 
 ;; install straight package manager
