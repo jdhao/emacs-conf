@@ -220,7 +220,7 @@
 (ivy-rich-mode t)
 
 ;; or enable counsel mode
-; (counsel-mode 1)
+(counsel-mode 1)
 
 ;; rebind ctrl-x ctrl-b to use counsel-switch-buffer
 (global-set-key (kbd "C-X C-B") 'counsel-switch-buffer)
