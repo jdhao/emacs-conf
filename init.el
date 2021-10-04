@@ -602,6 +602,7 @@
 (blackout 'anzu-mode)
 (blackout 'ivy-posframe-mode)
 (blackout 'ivy-mode)
+(blackout 'counsel-mode)
 (blackout 'smartparens-mode)
 (blackout 'which-key-mode)
 (blackout 'company-mode)
