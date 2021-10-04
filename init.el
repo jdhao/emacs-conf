@@ -346,6 +346,7 @@
 (straight-use-package 'markdown-mode)
 
 (setq markdown-enable-math t)
+(setq markdown-fontify-code-blocks-natively t)
 
 ;; spaceline: a beautiful mode line
 (straight-use-package 'spaceline)
