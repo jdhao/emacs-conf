@@ -307,8 +307,14 @@
 
 ;; mimic vim's ctrl-u for evil mode, see https://stackoverflow.com/q/14302171/6064933
 (define-key evil-normal-state-map (kbd "C-u") 'evil-scroll-up)
-;; close a window
+
+;; close a window or quit emacs (if it is the only window).
+;; count window num ref: https://emacs.stackexchange.com/q/3494/23435.
 (define-key evil-normal-state-map (kbd ", q") 'delete-window)
+(if (> (count-windows) 1)
+    (define-key evil-normal-state-map (kbd ", q") 'delete-window)
+    (define-key evil-normal-state-map (kbd ", q") 'save-buffers-kill-terminal))
+
 ;; save buffer
 (define-key evil-normal-state-map (kbd ", w") 'save-buffer)
 
