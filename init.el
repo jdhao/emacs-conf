@@ -225,6 +225,7 @@
 ;; rebind ctrl-x ctrl-b to use counsel-switch-buffer
 (global-set-key (kbd "C-X C-B") 'counsel-switch-buffer)
 (global-set-key (kbd "M-x") 'counsel-M-x)
+(global-set-key (kbd "C-x C-f") 'counsel-find-file)
 
 ;; (require 'ivy-posframe)
 ;; display at `ivy-posframe-style'
