@@ -477,6 +477,16 @@
 (global-set-key (kbd "C-\\") 'toggle-input-method)
 (pyim-basedict-enable)
 
+;; snippet engine
+(straight-use-package 'yasnippet)
+(straight-use-package 'yasnippet-snippets)
+
+(yas-global-mode 1)
+
+(define-key yas-minor-mode-map (kbd "<tab>") nil)
+(define-key yas-minor-mode-map (kbd "TAB") nil)
+(define-key yas-minor-mode-map (kbd "M-z") 'yas-expand)
+
 ;; more helpful help window
 (straight-use-package 'helpful)
 
