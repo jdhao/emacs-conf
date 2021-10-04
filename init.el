@@ -246,6 +246,7 @@
 
 ;; auto-completion with company
 (straight-use-package 'company)
+(straight-use-package 'company-emoji)
 
 ;; enable company mode in all buffers
 (global-company-mode)
@@ -262,6 +263,9 @@
 
 ;; use meta key and number to insert
 (setq company-show-quick-access 'left)
+
+;; add company-emoji to company bankends
+(add-to-list 'company-backends 'company-emoji)
 
 ;; insert space between Chinese and english character
 (straight-use-package 'pangu-spacing)
