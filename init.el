@@ -246,13 +246,9 @@
 
 ;; auto-completion with company
 (straight-use-package 'company)
-(straight-use-package 'company-quickhelp)
 
 ;; enable company mode in all buffers
 (global-company-mode)
-
-;; enable company-quickhelp
-(company-quickhelp-mode)
 
 ;; use tab and s-tab to cycle forward and backward completion items
 (add-hook 'after-init-hook 'company-tng-mode)
