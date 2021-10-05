@@ -45,6 +45,15 @@
 (global-set-key (kbd "<home>") 'move-beginning-of-line)
 (global-set-key (kbd "<end>") 'move-end-of-line)
 
+(global-set-key (kbd "C-l") 'redraw-frame)
+
+(defun refresh-file ()
+  (interactive)
+  (revert-buffer t (not (buffer-modified-p)) t)
+  (message "refresh file successfully"))
+
+(global-set-key [f5] 'refresh-file)
+
 ;; show line numbers on the left side of a window
 (global-display-line-numbers-mode)
 
