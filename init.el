@@ -455,6 +455,8 @@
 ;; powerful git client
 (straight-use-package 'magit)
 
+(setq vc-follow-symlinks t)  ;; do not ask, just follow symlinks
+
 ;; faster buffer jump (like vim-sneak)
 (straight-use-package 'avy)
 ;; load avy mode
