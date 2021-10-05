@@ -369,7 +369,6 @@
 
 ;; spaceline: a beautiful mode line
 (straight-use-package 'spaceline)
-;; (straight-use-package 'spaceline-all-the-icons)
 
 ;; spaceline settings
 (setq spaceline-highlight-face-func 'spaceline-highlight-face-evil-state)
@@ -379,9 +378,6 @@
 ;; Diable showing buffer size, should be placed below the
 ;; spaceline-spacemacs-theme command.
 (spaceline-toggle-buffer-size-off)
-
-;; use fancy icons on mode line (currently does not work on Windows)
-;; (spaceline-all-the-icons-theme)
 
 ;; show tabs and trailing whitespace, Ref: http://ergoemacs.org/emacs/whitespace-mode.html
 (require 'whitespace)
