@@ -8,7 +8,10 @@
 
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
 (setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
+
 (setq scroll-preserve-screen-position t) ;; preserve column position when scrolling
+(setq scroll-margin 3) ;; equivalent of vim's scrolloff option
+(setq scroll-conservatively 101)
 
 ;; Use y/n instead of yes/no
 (fset 'yes-or-no-p 'y-or-n-p)
@@ -111,9 +114,6 @@
 
 ;; set language environment
 (set-language-environment "UTF-8")
-
-;; do not recenter cursorline eagerly
-(setq scroll-conservatively 20)
 
 ;; do not ring bell (it is annoying)
 (setq visible-bell t
