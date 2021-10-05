@@ -45,7 +45,7 @@
 (global-set-key (kbd "<home>") 'move-beginning-of-line)
 (global-set-key (kbd "<end>") 'move-end-of-line)
 
-(global-set-key (kbd "C-l") 'redraw-frame)
+(global-set-key (kbd "C-l") (lambda () (interactive) (redraw-frame nil)))
 
 (defun refresh-file ()
   (interactive)
