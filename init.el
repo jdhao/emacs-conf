@@ -319,10 +319,14 @@
 
 ;; close a window or quit emacs (if it is the only window).
 ;; count window num ref: https://emacs.stackexchange.com/q/3494/23435.
-(define-key evil-normal-state-map (kbd ", q") 'delete-window)
-(if (> (count-windows) 1)
-    (define-key evil-normal-state-map (kbd ", q") 'delete-window)
-    (define-key evil-normal-state-map (kbd ", q") 'save-buffers-kill-terminal))
+(defun quit-win-or-quit-emacs ()
+  "quit win if there is more than 1 windows, otherwise quit emacs directly"
+  (interactive)
+    (if (> (count-windows) 1)
+        (delete-window)
+        (save-buffers-kill-terminal)))
+
+(define-key evil-normal-state-map (kbd ", q") 'quit-win-or-quit-emacs)
 
 ;; save buffer
 (define-key evil-normal-state-map (kbd ", w") 'save-buffer)
