@@ -1,0 +1,9 @@
+# -*- mode: snippet -*-
+# name: code block
+# key: cbl
+# --
+\`\`\`${1:LANG}
+$2
+\`\`\`
+
+$0

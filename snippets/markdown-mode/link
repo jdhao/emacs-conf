@@ -1,0 +1,6 @@
+# -*- mode: snippet -*-
+# name: Link
+# contributor: jdhao <jdhao@hotmail.com>
+# key: link
+# --
+[${1:TEXT}](${2:URL})

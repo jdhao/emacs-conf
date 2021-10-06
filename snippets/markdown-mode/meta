@@ -1,0 +1,12 @@
+# -*- mode: snippet -*-
+# name: meta data
+# contributor: jdhao <jdhao@hotmail.com>
+# key: meta
+# --
+---
+title: "${1:TITLE}"
+date: `(format-time-string "%Y-%m-%dT%H:%M:%S%:z")`
+tags: [${2:TAG}]
+categories: [${3:CATEGORY}]
+---
+$0
