@@ -10,7 +10,7 @@
 
 ;; imemu-list: emacs's tagbar?
 (straight-use-package 'imenu-list)
-(setq imenu-list-auto-resize t)
+(setq imenu-list-auto-resize nil)
 
 (global-set-key (kbd "C-'") 'imenu-list-smart-toggle)
 
@@ -40,11 +40,25 @@
 (setq which-key-idle-delay 0.8)
 (which-key-mode t)
 
+;; show key pressed
+;; (straight-use-package 'showkey)
+;; (showkey-log-mode)
+
 ;; auto-save when focus lost
 (straight-use-package 'super-save)
 ;; enable super-save
 (super-save-mode +1)
 
 (setq super-save-auto-save-when-idle t)
+
+;; more helpful help window
+(straight-use-package 'helpful)
+
+;; bind keys for helpful
+(global-set-key (kbd "C-h f") #'helpful-callable)
+(global-set-key (kbd "C-h v") #'helpful-variable)
+(global-set-key (kbd "C-h k") #'helpful-key)
+;; Lookup the current symbol at point.
+(global-set-key (kbd "C-c C-d") #'helpful-at-point)
 
 (provide 'init-misc)
