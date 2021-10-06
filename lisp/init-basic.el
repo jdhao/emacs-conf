@@ -54,12 +54,12 @@
 
 (global-set-key [f5] 'refresh-file)
 
-;; show line numbers on the left side of a window
-(global-display-line-numbers-mode)
-
 ;; use ctrl-enter to eval expression
 (define-key emacs-lisp-mode-map (kbd "<C-return>") 'eval-last-sexp)
 (define-key emacs-lisp-mode-map (kbd "<C-S-return>") 'eval-buffer)
+
+;; show line numbers on the left side of a window
+(global-display-line-numbers-mode)
 
 ;; show relative number like vim
 (setq display-line-numbers-type 'relative)
@@ -67,6 +67,9 @@
 ;; show line and column number on modeline
 (setq line-number-mode t)
 (setq column-number-mode t)
+
+;; highlight current line
+(global-hl-line-mode t)
 
 ;; show maximized window on startup
 (setq frame-resize-pixelwise t
@@ -127,9 +130,6 @@
 ;; do not ring bell (it is annoying)
 (setq visible-bell t
  ring-bell-function 'ignore)
-
-;; highlight current line
-(global-hl-line-mode t)
 
 ;; save place -- move to the place I was last time I visited this file
 (save-place-mode t)
