@@ -5,6 +5,7 @@
 (straight-use-package 'evil-matchit)
 (straight-use-package 'evil-commentary)
 (straight-use-package 'undo-tree)
+(straight-use-package 'evil-surround)
 
 ;; make j and k respect visual line mode.
 ;; note that it breaks evil-commentry, see https://github.com/linktohack/evil-commentary/issues/23.
@@ -35,6 +36,10 @@
 ;; save buffer
 (define-key evil-normal-state-map (kbd ", w") 'save-buffer)
 
+;; redefine H and L
+(define-key evil-normal-state-map (kbd "H") 'beginning-of-line)
+(define-key evil-normal-state-map (kbd "L") 'end-of-line)
+
 ;; don't need C-n, C-p (inteferes with company-quickhelp)
 (define-key evil-insert-state-map (kbd "C-n") nil)
 (define-key evil-insert-state-map (kbd "C-p") nil)
@@ -64,5 +69,8 @@
 
 ;; enable evil-commentary mode
 (evil-commentary-mode)
+
+;; enable evil-surround
+(global-evil-surround-mode)
 
 (provide 'init-evil)
