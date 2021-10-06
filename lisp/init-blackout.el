@@ -19,6 +19,8 @@
 (blackout 'undo-tree-mode)
 (blackout 'visual-line-mode)
 (blackout 'global-whitespace-mode)
+(blackout 'yas-minor-mode)
+(blackout 'pangu-spacing-mode)
 
 ;; for major modes
 (blackout 'emacs-lisp-mode "Elisp")
