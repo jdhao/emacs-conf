@@ -89,7 +89,7 @@
 (set-fontset-font t nil "Symbola" nil 'append)
 
 ;; change cursor color, see https://stackoverflow.com/a/4643018/6064933
-(add-to-list 'default-frame-alist '(cursor-color . "pale green"))
+;; (add-to-list 'default-frame-alist '(cursor-color . "pale green"))
 
 ;; show matching parentheses
 (show-paren-mode t)
