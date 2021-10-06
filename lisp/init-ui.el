@@ -20,7 +20,7 @@
 (straight-use-package 'monokai-theme)
 
 ;; load a random theme
-(defvar custom-themes '(gruvbox zenburn monokai solarized-dark material))
+(defvar custom-themes '(gruvbox zenburn monokai solarized-dark material solarized-selenized-light))
 
 (defun random-color-theme ()
   "Load a random color theme."
@@ -140,7 +140,7 @@
     ;; ((not (vmacs-show-tabbar-p)) nil)
     (t "Common"))))
 
-(setq centaur-tabs-style "bar")
+(setq centaur-tabs-style "wave")
 (setq centaur-tabs-set-icons t)
 (setq centaur-tabs-set-close-button nil)
 (setq centaur-tabs-gray-out-icons 'buffer)
