@@ -33,6 +33,8 @@
 
 (require 'init-lint)
 
+;; (require 'init-telega)
+
 (require 'init-misc)
 
 (require 'init-blackout)
