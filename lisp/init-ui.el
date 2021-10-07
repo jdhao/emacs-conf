@@ -8,6 +8,15 @@
 ;; start dashboard
 (dashboard-setup-startup-hook)
 
+(setq dashboard-startup-banner 'logo)
+(setq dashboard-center-content t)
+(setq dashboard-set-heading-icons t)
+(setq dashboard-set-file-icons t)
+(setq dashboard-footer-icon (all-the-icons-octicon "dashboard"
+                                                   :height 1.1
+                                                   :v-adjust -0.05
+                                                   :face 'font-lock-keyword-face))
+
 ;; change recent file save location, see https://emacs.stackexchange.com/a/19714/23435
 (setq recentf-save-file (recentf-expand-file-name "~/.cache/emacs/recentf"))
 
