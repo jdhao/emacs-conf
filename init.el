@@ -11,6 +11,8 @@
 
 (require 'init-ui)
 
+(require 'init-file-explorer)
+
 (require 'init-fuzzy-finder)
 
 (require 'init-autocomplete)
