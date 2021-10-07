@@ -24,5 +24,7 @@
 
 ;; for major modes
 (blackout 'emacs-lisp-mode "Elisp")
+(blackout 'dashboard-mode)
+(blackout 'lisp-interaction-mode)
 
 (provide 'init-blackout)
