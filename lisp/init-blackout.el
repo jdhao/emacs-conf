@@ -18,7 +18,7 @@
 (blackout 'super-save-mode)
 (blackout 'undo-tree-mode)
 (blackout 'visual-line-mode)
-(blackout 'global-whitespace-mode)
+(blackout 'whitespace-mode)
 (blackout 'yas-minor-mode)
 (blackout 'pangu-spacing-mode)
 

@@ -78,7 +78,11 @@
 ;;                     :foreground "#183bc8"
 ;;                     :weight 'normal)
 
-(global-whitespace-mode t)
+;; We do not want to enable whitespace-mode globally, since for
+;; non-file buffers, tab may be used to align elements, ref:
+;; https://www.gnu.org/software/emacs/manual/html_node/elisp/Basic-Major-Modes.html
+(add-hook 'prog-mode-hook 'whitespace-mode)
+(add-hook 'text-mode-hook 'whitespace-mode)
 
 ;; beautiful tablines
 (straight-use-package 'centaur-tabs)
