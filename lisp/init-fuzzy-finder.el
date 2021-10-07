@@ -2,13 +2,16 @@
 ;; ivy: fuzzy finder
 (straight-use-package 'ivy)
 (straight-use-package 'counsel)
-(straight-use-package 'ivy-rich)
+(straight-use-package 'ivy-rich) ;; show useful info for ivy items
+(straight-use-package 'all-the-icons-ivy-rich) ;; add fancy icon to ivy UI
 
-;; enable ivy mode by default
-(ivy-mode 1)
+(all-the-icons-ivy-rich-mode 1)
 
 ;; enable ivy-rich mode
 (ivy-rich-mode t)
+
+;; enable ivy mode by default
+(ivy-mode 1)
 
 ;; or enable counsel mode
 (counsel-mode 1)
