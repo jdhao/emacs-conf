@@ -149,4 +149,7 @@
          (set-fontset-font
           t 'symbol (font-spec :family "Apple Color Emoji") nil 'prepend))
 
+;; do not use tab for indentation
+(setq-default indent-tabs-mode nil)
+
 (provide 'init-basic)
