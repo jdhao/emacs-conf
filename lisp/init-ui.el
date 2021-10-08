@@ -52,9 +52,15 @@
 ;; spaceline: a beautiful mode line
 (straight-use-package 'spaceline)
 
+;; change spaceline git segment, ref: https://github.com/TheBB/spaceline/issues/20#issuecomment-150488572.
+(defadvice vc-mode-line (after strip-backend () activate)
+    (when (stringp vc-mode)
+      (let ((gitlogo (replace-regexp-in-string "^ Git." "  " vc-mode)))
+        (setq vc-mode gitlogo))))
+
 ;; spaceline settings
-(setq spaceline-highlight-face-func 'spaceline-highlight-face-evil-state)
-(setq powerline-default-separator 'slant)  ;; separator style
+(setq spaceline-highlight-face-func 'spaceline-highlight-face-modified)
+(setq powerline-default-separator 'bar)  ;; separator style
 
 (spaceline-spacemacs-theme)
 ;; Diable showing buffer size, should be placed below the
