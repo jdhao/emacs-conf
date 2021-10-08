@@ -33,7 +33,7 @@
 
 ;; load a random theme
 (defvar custom-themes '(gruvbox zenburn monokai solarized-dark material moe-dark sanityinc-tomorrow-eighties
-                                atom-one-dark solarized-selenized-light moe-light gruvbox-light-soft))
+                                atom-one-dark solarized-light moe-light gruvbox-light-soft))
 
 (defun random-color-theme ()
   "Load a random color theme."
