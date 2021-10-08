@@ -141,6 +141,9 @@
 ;; set the default encoding and file format to utf-8 and unix,
 ;; ref: https://emacs.stackexchange.com/a/5781/23435
 (setq-default buffer-file-coding-system 'utf-8-unix)
+(set-default-coding-systems 'utf-8-unix)
+(setq locale-coding-system 'utf-8-unix)
+(prefer-coding-system 'utf-8-unix)
 
 ;; emoji support for macOS, ref: https://github.crookster.org/emacs27-from-homebrew-on-macos-with-emoji/
 (if (version< "27.0" emacs-version)
@@ -151,5 +154,8 @@
 
 ;; do not use tab for indentation
 (setq-default indent-tabs-mode nil)
+
+;; show sign on left fringe for non-file lines.
+(setq-default indicate-empty-lines t)
 
 (provide 'init-basic)
