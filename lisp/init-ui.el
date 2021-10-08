@@ -29,10 +29,11 @@
 (straight-use-package 'monokai-theme)
 (straight-use-package 'color-theme-sanityinc-tomorrow)
 (straight-use-package 'moe-theme)
+(straight-use-package 'atom-one-dark-theme)
 
 ;; load a random theme
 (defvar custom-themes '(gruvbox zenburn monokai solarized-dark material moe-dark sanityinc-tomorrow-eighties
-                                solarized-selenized-light moe-light gruvbox-light-soft))
+                                atom-one-dark solarized-selenized-light moe-light gruvbox-light-soft))
 
 (defun random-color-theme ()
   "Load a random color theme."
