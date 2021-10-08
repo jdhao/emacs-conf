@@ -21,6 +21,7 @@
 (blackout 'whitespace-mode)
 (blackout 'yas-minor-mode)
 (blackout 'pangu-spacing-mode)
+(blackout 'company-posframe-mode)
 
 ;; for major modes
 (blackout 'emacs-lisp-mode "Elisp")
