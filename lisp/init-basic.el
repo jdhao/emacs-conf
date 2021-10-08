@@ -155,7 +155,7 @@
 ;; do not use tab for indentation
 (setq-default indent-tabs-mode nil)
 
-;; show sign on left fringe for non-file lines.
-(setq-default indicate-empty-lines t)
+;; whether to show sign on left fringe for non-file lines.
+(setq-default indicate-empty-lines nil)
 
 (provide 'init-basic)
