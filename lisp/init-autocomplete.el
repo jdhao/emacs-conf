@@ -1,6 +1,14 @@
+;; fix the issue that line number is missing when completion menu is near it,
+;; see also https://github.com/company-mode/company-mode/issues/921.
+(straight-use-package 'company-posframe)
+(company-posframe-mode 1)
+
+;; (straight-use-package 'company-box)
+;; ;; enable company box
+;; (add-hook 'company-mode-hook 'company-box-mode)
+
 ;; auto-completion with company
 (straight-use-package 'company)
-(straight-use-package 'company-emoji)
 
 ;; enable company mode in all buffers
 (global-company-mode)
@@ -18,6 +26,7 @@
 ;; use meta key and number to insert
 (setq company-show-quick-access 'left)
 
+(straight-use-package 'company-emoji)
 ;; add company-emoji to company bankends
 (add-to-list 'company-backends 'company-emoji)
 
