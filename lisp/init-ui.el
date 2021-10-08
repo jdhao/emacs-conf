@@ -31,8 +31,8 @@
 (straight-use-package 'moe-theme)
 
 ;; load a random theme
-(defvar custom-themes '(gruvbox zenburn monokai solarized-dark material moe-dark
-                                solarized-selenized-light color-theme-sanityinc-tomorrow-day moe-light))
+(defvar custom-themes '(gruvbox zenburn monokai solarized-dark material moe-dark sanityinc-tomorrow-eighties
+                                solarized-selenized-light moe-light gruvbox-light-soft))
 
 (defun random-color-theme ()
   "Load a random color theme."
