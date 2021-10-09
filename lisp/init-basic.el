@@ -88,7 +88,7 @@
 
 ;; change font style and size
 (cond (is-win (set-frame-font "DejaVuSansMono NF 9"))
-      (is-mac (set-face-attribute 'default nil :height 130)))
+      (is-mac (set-frame-font "Iosevka Nerd Font 15")))
 
 (set-fontset-font t nil "Symbola" nil 'append)
 
