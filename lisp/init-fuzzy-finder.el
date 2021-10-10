@@ -26,16 +26,20 @@
 (global-set-key (kbd "M-x") 'counsel-M-x)
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)
 
-;; (straight-use-package 'ivy-posframe)
+(straight-use-package 'ivy-posframe)
 
 ;; display at `ivy-posframe-style'
-;; (setq ivy-posframe-display-functions-alist '((t . ivy-posframe-display)))
+(setq ivy-posframe-display-functions-alist '((t . ivy-posframe-display)))
 
-;; (setq ivy-posframe-parameters
-;;       '((left-fringe . 4)
-;;         (right-fringe . 4)))
+(setq ivy-posframe-parameters
+      '((left-fringe . 4)
+        (right-fringe . 4)))
 
-;; (ivy-posframe-mode 1)
+(ivy-posframe-mode 1)
+
+;; change ivy-posframe border color, ref: https://github.com/tumashu/ivy-posframe/issues/83
+(set-face-attribute 'ivy-posframe-border nil
+                    :background "white")
 
 ;; change ivy posframe background color to make it stand out, see
 ;; https://www.reddit.com/r/emacs/comments/jlsass/comment/gas9jaz/?utm_source=share&utm_medium=web2x&context=3
