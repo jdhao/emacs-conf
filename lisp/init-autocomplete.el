@@ -1,7 +1,7 @@
 ;; fix the issue that line number is missing when completion menu is near it,
 ;; see also https://github.com/company-mode/company-mode/issues/921.
-(straight-use-package 'company-posframe)
-(company-posframe-mode 1)
+;; (straight-use-package 'company-posframe)
+;; (company-posframe-mode 1)
 
 ;; (straight-use-package 'company-box)
 ;; ;; enable company box
@@ -23,11 +23,21 @@
 
 (setq company-idle-delay 0.1)
 
-;; use meta key and number to insert
-(setq company-show-quick-access 'left)
+;; whether to show number for completion items so that users can use
+;; meta key and number to insert
+(setq company-show-quick-access 'nil)
 
 (straight-use-package 'company-emoji)
 ;; add company-emoji to company bankends
 (add-to-list 'company-backends 'company-emoji)
+
+;; fuzzy searching the company completion candidate
+(straight-use-package 'company-fuzzy)
+(straight-use-package 'liquidmetal)
+
+(global-company-fuzzy-mode 1)
+
+(setq company-fuzzy-sorting-backend 'liquidmetal)
+(setq company-fuzzy-show-annotation t)
 
 (provide 'init-autocomplete)
