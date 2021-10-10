@@ -26,13 +26,12 @@
 (straight-use-package 'solarized-theme)
 (straight-use-package 'gruvbox-theme)
 (straight-use-package 'material-theme)
-(straight-use-package 'monokai-theme)
 (straight-use-package 'color-theme-sanityinc-tomorrow)
 (straight-use-package 'moe-theme)
 (straight-use-package 'atom-one-dark-theme)
 
 ;; load a random theme
-(defvar custom-themes '(gruvbox zenburn monokai solarized-dark material moe-dark sanityinc-tomorrow-eighties
+(defvar custom-themes '(gruvbox zenburn doom-monokai-pro solarized-dark material moe-dark sanityinc-tomorrow-eighties
                                 atom-one-dark solarized-light moe-light gruvbox-light-soft))
 
 (defun random-color-theme ()
