@@ -18,15 +18,6 @@
 (straight-use-package 'mouse3)
 (global-set-key (kbd "<mouse-3>") 'mouse3-popup-menu)
 
-;; prescient: sort by usage frequency
-(straight-use-package 'prescient)
-(straight-use-package 'ivy-prescient)
-(straight-use-package 'company-prescient)
-
-(ivy-prescient-mode t)
-(company-prescient-mode t)
-(prescient-persist-mode t)
-
 ;; gcmh: auto-gc mode
 (straight-use-package 'gcmh)
 (gcmh-mode 1)
