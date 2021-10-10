@@ -103,8 +103,6 @@
 (set-face-attribute 'show-paren-match nil
             :weight 'bold :underline t :overline nil :slant 'normal)
 
-;; show trailing white space
-(setq-default show-trailing-whitespace t)
 ;; remove trailing white space on save, ref: https://emacs.stackexchange.com/a/33720/23435
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
 
