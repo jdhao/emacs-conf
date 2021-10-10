@@ -22,9 +22,6 @@
 (straight-use-package 'gcmh)
 (gcmh-mode 1)
 
-;; do not litter .emacs.d dir (TODO: settings?)
-(straight-use-package 'no-littering)
-
 ;; hint key combinations
 (straight-use-package 'which-key)
 ;; enable which-key

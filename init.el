@@ -7,6 +7,8 @@
 
 (require 'init-pack-manager)
 
+(require 'init-nolitter)
+
 (require 'init-evil)
 
 (require 'init-ui)
