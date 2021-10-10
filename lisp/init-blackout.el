@@ -22,9 +22,11 @@
 (blackout 'yas-minor-mode)
 (blackout 'pangu-spacing-mode)
 (blackout 'company-posframe-mode)
+(blackout 'texfrag-mode)
+(blackout 'company-fuzzy-mode)
 
 ;; for major modes
-(blackout 'emacs-lisp-mode "Elisp")
+(blackout 'emacs-lisp-mode "elisp")
 (blackout 'dashboard-mode)
 (blackout 'lisp-interaction-mode)
 
