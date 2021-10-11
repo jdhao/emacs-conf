@@ -92,6 +92,19 @@
 
 (set-fontset-font t nil "Symbola" nil 'append)
 
+;; the character set to use can be found via command
+;; list-character-sets. To set font for current session, we can also
+;; use command menu-set-font interactively.
+;; https://www.reddit.com/r/emacs/comments/8tz1r0/comment/e1bjce6/
+;; https://www.gnu.org/software/emacs/manual/html_node/emacs/Modifying-Fontsets.html
+;; https://www.emacswiki.org/emacs/FontSets
+(when is-win
+  (progn (set-fontset-font t 'gb18030
+                           ;; Noto Sans CJK: https://www.google.com/get/noto/help/cjk/
+                           (font-spec :family "Noto Sans SC"))
+         (dolist (item '(("Noto Sans SC" . 1.2)))
+           (add-to-list 'face-font-rescale-alist item))))
+
 ;; change cursor color, see https://stackoverflow.com/a/4643018/6064933
 ;; (add-to-list 'default-frame-alist '(cursor-color . "pale green"))
 
