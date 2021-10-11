@@ -27,9 +27,10 @@
 ;; meta key and number to insert
 (setq company-show-quick-access 'nil)
 
-(straight-use-package 'company-emoji)
-;; add company-emoji to company bankends
-(add-to-list 'company-backends 'company-emoji)
+(when is-mac
+  (progn (straight-use-package 'company-emoji)
+         ;; add company-emoji to company bankends
+         (add-to-list 'company-backends 'company-emoji)))
 
 ;; fuzzy searching the company completion candidate
 (straight-use-package 'company-fuzzy)
