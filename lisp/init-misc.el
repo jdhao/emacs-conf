@@ -49,4 +49,10 @@
 ;; Lookup the current symbol at point.
 (global-set-key (kbd "C-c C-d") #'helpful-at-point)
 
+;; fix maxOS PATH issue when starting from GUI
+(straight-use-package 'exec-path-from-shell)
+
+(when (memq window-system '(mac ns x))
+  (exec-path-from-shell-initialize))
+
 (provide 'init-misc)
