@@ -184,4 +184,10 @@
 ;; enable hihglight-defined
 (add-hook 'emacs-lisp-mode-hook 'highlight-defined-mode)
 
+(straight-use-package 'ns-auto-titlebar)
+(when is-mac (ns-auto-titlebar-mode))
+
+(straight-use-package 'minimap)
+(setq minimap-window-location 'right)
+
 (provide 'init-ui)
