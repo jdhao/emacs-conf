@@ -10,4 +10,8 @@
 
 (define-key evil-normal-state-map (kbd "f") 'avy-goto-char-2)
 
+;; 开启根据拼音首字母跳转
+(straight-use-package 'ace-pinyin)
+(ace-pinyin-global-mode +1)
+
 (provide 'init-jump)
