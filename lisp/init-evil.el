@@ -85,4 +85,18 @@
 ;; enable evil-surround
 (global-evil-surround-mode)
 
+;; show hint for some operation, e.g., yank
+(straight-use-package 'evil-goggles)
+
+;; highlight duration
+(setq evil-goggles-duration 0.300)
+
+(setq evil-goggles-pulse nil) ;whether to pulse
+
+;; disable highlight for certain ops
+(setq evil-goggles-enable-delete nil
+      evil-goggles-enable-commentary nil)
+
+(evil-goggles-mode)
+
 (provide 'init-evil)
