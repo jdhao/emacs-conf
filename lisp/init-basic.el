@@ -59,8 +59,7 @@
 (define-key emacs-lisp-mode-map (kbd "<C-S-return>") 'eval-buffer)
 
 ;; show line numbers on the left side of a window
-(add-hook 'prog-mode-hook 'display-line-numbers-mode)
-(add-hook 'text-mode-hook 'display-line-numbers-mode)
+(global-display-line-numbers-mode t)
 
 ;; show relative number like vim
 (setq display-line-numbers-type 'relative)
