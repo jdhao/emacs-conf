@@ -48,23 +48,32 @@
 (straight-use-package 'rainbow-delimiters)
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 
-;; spaceline: a beautiful mode line
-(straight-use-package 'spaceline)
+;; ;; spaceline: a beautiful mode line
+;; (straight-use-package 'spaceline)
 
-;; change spaceline git segment, ref: https://github.com/TheBB/spaceline/issues/20#issuecomment-150488572.
-(defadvice vc-mode-line (after strip-backend () activate)
-    (when (stringp vc-mode)
-      (let ((gitlogo (replace-regexp-in-string "^ Git." "  " vc-mode)))
-        (setq vc-mode gitlogo))))
+;; ;; change spaceline git segment, ref: https://github.com/TheBB/spaceline/issues/20#issuecomment-150488572.
+;; (defadvice vc-mode-line (after strip-backend () activate)
+;;     (when (stringp vc-mode)
+;;       (let ((gitlogo (replace-regexp-in-string "^ Git." "  " vc-mode)))
+;;         (setq vc-mode gitlogo))))
 
-;; spaceline settings
-(setq spaceline-highlight-face-func 'spaceline-highlight-face-modified)
-(setq powerline-default-separator 'bar)  ;; separator style
+;; ;; spaceline settings
+;; (setq spaceline-highlight-face-func 'spaceline-highlight-face-modified)
+;; (setq powerline-default-separator 'bar)  ;; separator style
 
-(spaceline-spacemacs-theme)
-;; Diable showing buffer size, should be placed below the
-;; spaceline-spacemacs-theme command.
-(spaceline-toggle-buffer-size-off)
+;; (spaceline-spacemacs-theme)
+;; ;; Diable showing buffer size, should be placed below the
+;; ;; spaceline-spacemacs-theme command.
+;; (spaceline-toggle-buffer-size-off)
+
+(straight-use-package 'doom-modeline)
+
+(setq doom-modeline-height 15
+      doom-modeline-bar-width 0
+      doom-modeline-modal-icon nil
+      )
+
+(doom-modeline-mode 1)
 
 ;; show tabs and trailing whitespace, Ref: http://ergoemacs.org/emacs/whitespace-mode.html
 (require 'whitespace)
