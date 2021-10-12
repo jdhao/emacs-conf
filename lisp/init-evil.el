@@ -47,6 +47,15 @@
 (define-key evil-insert-state-map (kbd "C-n") nil)
 (define-key evil-insert-state-map (kbd "C-p") nil)
 
+;; In order to use jk to leave insert mode, see also https://stackoverflow.com/q/10569165/6064933.
+(straight-use-package 'key-chord)
+
+;; timeout between pressing of two keys (it is like vim's timeoutlen)
+(setq key-chord-two-keys-delay 0.2)
+(key-chord-mode 1)
+
+(key-chord-define evil-insert-state-map "jk" 'evil-normal-state)
+
 ;; continuous shift of block of text, ref: https://alexpeits.github.io/emacs.d/#orgaf53a91
 (define-key evil-visual-state-map (kbd "<") #'(lambda ()
                                                 (interactive)
