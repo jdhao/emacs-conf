@@ -69,8 +69,7 @@
 
 (straight-use-package 'doom-modeline)
 
-(setq doom-modeline-height 15
-      doom-modeline-bar-width 0
+(setq doom-modeline-bar-width 0
       doom-modeline-modal-icon nil
       )
 
