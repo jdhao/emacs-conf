@@ -33,4 +33,7 @@
 
 (add-hook 'olivetti-mode 'global-display-line-numbers-mode)
 
+;; we need to install grip first with `pip install grip`.
+(straight-use-package 'grip-mode)
+
 (provide 'init-md)
