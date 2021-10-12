@@ -7,7 +7,7 @@
 
 ;; faster buffer jump (like vim-sneak)
 (straight-use-package 'avy)
-;; load avy mode
-(global-set-key (kbd "C-:") 'avy-goto-char-2)
+
+(define-key evil-normal-state-map (kbd "f") 'avy-goto-char-2)
 
 (provide 'init-jump)
