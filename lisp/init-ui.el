@@ -29,10 +29,11 @@
 (straight-use-package 'color-theme-sanityinc-tomorrow)
 (straight-use-package 'moe-theme)
 (straight-use-package 'atom-one-dark-theme)
+(straight-use-package 'kaolin-themes)
 
 ;; load a random theme
 (defvar custom-themes '(gruvbox zenburn doom-monokai-pro solarized-dark material moe-dark sanityinc-tomorrow-eighties
-                                atom-one-dark solarized-light moe-light gruvbox-light-soft))
+                                kaolin-temple atom-one-dark solarized-light gruvbox-light-soft kaolin-valley-light))
 
 (defun random-color-theme ()
   "Load a random color theme."
