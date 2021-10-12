@@ -11,6 +11,9 @@
 ;; note that it breaks evil-commentry, see https://github.com/linktohack/evil-commentary/issues/23.
 ;; (setq evil-respect-visual-line-mode t)
 
+(setq evil-want-Y-yank-to-eol t) ;; Y behaves like y$, ref: https://emacs.stackexchange.com/a/28848/23435.
+(setq evil-want-C-u-scroll t) ;; use ctrl-u to scroll
+
 ;; enable evil mode
 (evil-mode 1)
 
@@ -18,9 +21,6 @@
 ;; https://www.reddit.com/r/emacs/comments/n1pibp/comment/gwei7fw/
 (evil-set-undo-system 'undo-tree)
 (global-undo-tree-mode 1)
-
-;; mimic vim's ctrl-u for evil mode, see https://stackoverflow.com/q/14302171/6064933
-(define-key evil-normal-state-map (kbd "C-u") 'evil-scroll-up)
 
 ;; close a window or quit emacs (if it is the only window).
 ;; count window num ref: https://emacs.stackexchange.com/q/3494/23435.
@@ -35,6 +35,9 @@
 
 ;; save buffer
 (define-key evil-normal-state-map (kbd ", w") 'save-buffer)
+
+;; delete trailing space
+(define-key evil-normal-state-map (kbd ", SPC") 'delete-trailing-whitespace)
 
 ;; redefine H and L
 (define-key evil-normal-state-map (kbd "H") 'beginning-of-line)
