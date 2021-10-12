@@ -171,7 +171,7 @@
     ;; ((not (vmacs-show-tabbar-p)) nil)
     (t "Common"))))
 
-(setq centaur-tabs-style "wave")
+(setq centaur-tabs-style "bar")
 (setq centaur-tabs-set-icons t)
 (setq centaur-tabs-set-close-button nil)
 (setq centaur-tabs-gray-out-icons 'buffer)
