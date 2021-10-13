@@ -33,12 +33,12 @@
          (add-to-list 'company-backends 'company-emoji)))
 
 ;; fuzzy searching the company completion candidate
-(straight-use-package 'company-fuzzy)
-(straight-use-package 'liquidmetal)
+;; (straight-use-package 'company-fuzzy)
+;; (straight-use-package 'liquidmetal)
 
-(global-company-fuzzy-mode 1)
+;; (global-company-fuzzy-mode 1)
 
-(setq company-fuzzy-sorting-backend 'liquidmetal)
-(setq company-fuzzy-show-annotation t)
+;; (setq company-fuzzy-sorting-backend 'liquidmetal)
+;; (setq company-fuzzy-show-annotation t)
 
 (provide 'init-autocomplete)
