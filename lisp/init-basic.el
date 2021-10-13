@@ -108,7 +108,7 @@
 (menu-bar-mode -1)
 
 ;; change font style and size
-(cond (is-win (set-frame-font "DejaVuSansMono NF 9"))
+(cond (is-win (set-frame-font "DejaVuSansMono NF 10"))
       (is-mac (set-frame-font "Iosevka Nerd Font 15")))
 
 (set-fontset-font t nil "Symbola" nil 'append)
@@ -123,7 +123,7 @@
   (progn (set-fontset-font t 'gb18030
                            ;; Noto Sans CJK: https://www.google.com/get/noto/help/cjk/
                            (font-spec :family "Noto Sans SC"))
-         (dolist (item '(("Noto Sans SC" . 1.2)))
+         (dolist (item '(("Noto Sans SC" . 1.1)))
            (add-to-list 'face-font-rescale-alist item))))
 
 ;; change cursor color, see https://stackoverflow.com/a/4643018/6064933
