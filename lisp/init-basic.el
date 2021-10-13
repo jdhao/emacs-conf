@@ -185,4 +185,9 @@
 ;; fill-column is like vim's textwidth, ref:
 ;; https://www.mail-archive.com/implementations-list@lists.ourproject.org/msg01780.html
 (setq fill-column 100)
+
+;; recommened by lsp-mode for better performance, ref:
+;; https://emacs-lsp.github.io/lsp-mode/page/performance/
+(setq read-process-output-max (* 1024 1024))
+
 (provide 'init-basic)
