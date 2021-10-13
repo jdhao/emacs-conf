@@ -182,4 +182,7 @@
 ;; whether to show sign on left fringe for non-file lines.
 (setq-default indicate-empty-lines nil)
 
+;; fill-column is like vim's textwidth, ref:
+;; https://www.mail-archive.com/implementations-list@lists.ourproject.org/msg01780.html
+(setq fill-column 100)
 (provide 'init-basic)
