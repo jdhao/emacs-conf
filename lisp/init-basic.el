@@ -3,6 +3,10 @@
 (defconst is-linux (string-equal system-type "gnu/linux"))
 (defconst is-win (string-equal system-type "windows-nt"))
 
+;; set user name and user email
+(setq user-full-name "Jiedong Hao"
+      user-mail-address "jdhao@hotmail.com")
+
 ;;;; builtin settings
 (setq debug-on-error t)
 
