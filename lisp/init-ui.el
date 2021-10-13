@@ -199,4 +199,9 @@
 (straight-use-package 'minimap)
 (setq minimap-window-location 'right)
 
+;; modern style fringe indicator
+(straight-use-package 'modern-fringes)
+(modern-fringes-mode)
+(modern-fringes-invert-arrows)
+
 (provide 'init-ui)
