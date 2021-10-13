@@ -133,9 +133,8 @@
 (show-paren-mode t)
 
 ;; the style for matching parentheses
-(set-face-background 'show-paren-match "#ff0000")
 (set-face-attribute 'show-paren-match nil
-            :weight 'bold :underline t :overline nil :slant 'normal)
+            :weight 'bold :underline t :slant 'normal)
 
 ;; remove trailing white space on save, ref: https://emacs.stackexchange.com/a/33720/23435
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
