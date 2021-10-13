@@ -7,6 +7,18 @@
 (setq user-full-name "Jiedong Hao"
       user-mail-address "jdhao@hotmail.com")
 
+;; Disalbe the annoying "For information about GNU Emacs ..." message,
+;; ref: https://emacs.stackexchange.com/a/437/23435
+(defun display-startup-echo-area-message ()
+  (message nil))
+
+;; disable echo area message (the following does not actually work)
+;; (setq inhibit-startup-echo-area-message t)
+
+;; disable welcome page and message
+(setq inhibit-startup-screen t)
+(setq inhibit-startup-message t)
+
 ;;;; builtin settings
 (setq debug-on-error t)
 
@@ -127,13 +139,6 @@
 
 ;; disable auto-save mode
 (setq auto-save-default nil)
-
-;; disable welcome page and message
-(setq inhibit-startup-screen t)
-(setq inhibit-startup-message t)
-
-;; disable echo area message
-(setq inhibit-startup-echo-area-message t)
 
 ;; auto-reload file if it has been changed outside of Emacs, see
 ;; https://stackoverflow.com/q/1480572/6064933
