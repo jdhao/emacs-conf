@@ -72,8 +72,11 @@
 (setq doom-modeline-bar-width 0
       doom-modeline-modal-icon nil
       )
-
 (doom-modeline-mode 1)
+
+(doom-modeline-def-modeline 'main
+  '(modals vcs remote-host buffer-info matches parrot selection-info)
+  '(misc-info minor-modes input-method major-mode buffer-encoding buffer-position process checker))
 
 ;; show tabs and trailing whitespace, Ref: http://ergoemacs.org/emacs/whitespace-mode.html
 (require 'whitespace)
