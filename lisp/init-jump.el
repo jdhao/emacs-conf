@@ -10,6 +10,13 @@
 
 (define-key evil-normal-state-map (kbd "f") 'avy-goto-char-2)
 
+;; Emacs use ?a to represent a character, see https://stackoverflow.com/q/19862517/6064933.
+(setq avy-keys (number-sequence ?a ?z))
+
+(setq avy-style 'at-full)
+
+(setq avy-background t) ;; obscure background when searching
+
 ;; 开启根据拼音首字母跳转
 (straight-use-package 'ace-pinyin)
 (ace-pinyin-global-mode +1)
