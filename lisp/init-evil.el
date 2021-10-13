@@ -14,6 +14,12 @@
 (setq evil-want-Y-yank-to-eol t) ;; Y behaves like y$, ref: https://emacs.stackexchange.com/a/28848/23435.
 (setq evil-want-C-u-scroll t) ;; use ctrl-u to scroll
 
+;; Treat symbol as words so the hypen between is considered part of a word.
+(with-eval-after-load 'evil
+    (defalias #'forward-evil-word #'forward-evil-symbol)
+    ;; make evil-search-word look for symbol rather than word boundaries
+    (setq-default evil-symbol-word-search t))
+
 ;; enable evil mode
 (evil-mode 1)
 
