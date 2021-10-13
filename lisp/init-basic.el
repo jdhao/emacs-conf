@@ -70,9 +70,11 @@
 
 (global-set-key [f5] 'refresh-file)
 
-;; use ctrl-enter to eval expression
-(define-key emacs-lisp-mode-map (kbd "<C-return>") 'eval-last-sexp)
-(define-key emacs-lisp-mode-map (kbd "<C-S-return>") 'eval-buffer)
+;; use ctrl-enter to eval expression. lisp-mode-shared-map is the parent for emacs-lisp-mode-map
+;; lisp-interaction-mode-map, so we set the shortcut here to avoid duplication, ref:
+;; https://emacs.stackexchange.com/q/3830/23435.
+(define-key lisp-mode-shared-map (kbd "<C-return>") 'eval-last-sexp)
+(define-key lisp-mode-shared-map (kbd "<C-S-return>") 'eval-buffer)
 
 ;; show line numbers on the left side of a window
 (global-display-line-numbers-mode t)
