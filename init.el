@@ -37,7 +37,7 @@
 
 (require 'init-lint)
 
-;; (require 'init-telega)
+(require 'init-lsp)
 
 (require 'init-misc)
 
