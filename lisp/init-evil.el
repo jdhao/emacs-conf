@@ -75,6 +75,29 @@
                                                 (call-interactively 'evil-shift-right)
                                                 (execute-kbd-macro "gv"))))
 
+;; make J remove leading comment symbol like what vim does
+(evil-define-operator +evil-join-a (beg end)
+  "Join the selected lines.
+This advice improves on `evil-join' by removing comment delimiters when joining
+commented lines, by using `fill-region-as-paragraph'.
+From https://github.com/emacs-evil/evil/issues/606"
+  :motion evil-line
+  (let* ((count (count-lines beg end))
+         (count (if (> count 1) (1- count) count))
+         (fixup-mark (make-marker)))
+    (dotimes (var count)
+      (if (and (bolp) (eolp))
+          (join-line 1)
+        (let* ((end (line-beginning-position 3))
+               (fill-column (1+ (- end beg))))
+          (set-marker fixup-mark (line-end-position))
+          (fill-region-as-paragraph beg end nil t)
+          (goto-char fixup-mark)
+          (fixup-whitespace))))
+    (set-marker fixup-mark nil)))
+
+(advice-add #'evil-join :override #'+evil-join-a)
+
 ;; show search count and index
 (require 'evil-anzu)
 (global-anzu-mode +1)
