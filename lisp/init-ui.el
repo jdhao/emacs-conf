@@ -186,8 +186,8 @@
                           "\*sdcv\*"
                           "\*osx-dictionary\*"
                           "\*Messages\*"
-              "\*dashboard\*"
-              "\*scratch\*"
+                          "\*dashboard\*"
+                          "\*scratch\*"
                           ))
                      (buffer-name))
      "Emacs")
