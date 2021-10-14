@@ -212,4 +212,8 @@
 ;; https://emacs-lsp.github.io/lsp-mode/page/performance/
 (setq read-process-output-max (* 1024 1024))
 
+;; show clickable links, ref: https://emacs.stackexchange.com/a/30529/23435
+(add-hook 'prog-mode-hook 'goto-address-prog-mode)
+(add-hook 'text-mode-hook 'goto-address-prog-mode)
+
 (provide 'init-basic)
