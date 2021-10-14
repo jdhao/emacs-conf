@@ -3,9 +3,13 @@
 ;; (straight-use-package 'company-posframe)
 ;; (company-posframe-mode 1)
 
-;; (straight-use-package 'company-box)
-;; ;; enable company box
-;; (add-hook 'company-mode-hook 'company-box-mode)
+(straight-use-package 'company-box)
+;; enable company box
+(add-hook 'company-mode-hook 'company-box-mode)
+
+(setq company-box-backends-colors nil
+      company-box-enable-icon t
+      company-box-scrollbar t)
 
 ;; auto-completion with company
 (straight-use-package 'company)
@@ -31,6 +35,9 @@
   (progn (straight-use-package 'company-emoji)
          ;; add company-emoji to company bankends
          (add-to-list 'company-backends 'company-emoji)))
+
+;; Use ctrl-return for confirming the selected items.
+(define-key company-active-map (kbd "<C-return>") 'company-complete-selection)
 
 ;; fuzzy searching the company completion candidate
 ;; (straight-use-package 'company-fuzzy)
