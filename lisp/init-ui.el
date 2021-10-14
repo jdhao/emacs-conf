@@ -30,18 +30,38 @@
 (straight-use-package 'moe-theme)
 (straight-use-package 'atom-one-dark-theme)
 (straight-use-package 'kaolin-themes)
+(straight-use-package 'humanoid-themes)
+(straight-use-package 'lab-themes)
 
 ;; load a random theme
-(defvar custom-themes '(gruvbox zenburn doom-monokai-pro solarized-dark material moe-dark sanityinc-tomorrow-eighties
-                                kaolin-temple atom-one-dark solarized-light gruvbox-light-soft kaolin-valley-light))
+(defvar light-themes '(solarized-light
+                       gruvbox-light-soft
+                       kaolin-valley-light
+                       humanoid-light
+                       lab-light)
+  "light themes to use")
+
+(defvar dark-themes '(gruvbox
+                      zenburn
+                      doom-monokai-pro
+                      solarized-dark
+                      material
+                      moe-dark
+                      sanityinc-tomorrow-eighties
+                      kaolin-temple
+                      atom-one-dark
+                      lab-dark)
+  "dark themes to use")
+
+(defvar jdhao-themes (append light-themes dark-themes))
 
 (defun random-color-theme ()
   "Load a random color theme."
   (interactive)
   (random t)
-  (setq cur-theme (nth (random (length custom-themes)) custom-themes))
-  (load-theme cur-theme t)
-  (message "Loaded Theme: %s" (symbol-name cur-theme)))
+  (setq current-theme (seq-random-elt jdhao-themes))
+  (load-theme current-theme t)
+  (message "Loaded Theme: %s" (symbol-name current-theme)))
 
 (random-color-theme)
 
