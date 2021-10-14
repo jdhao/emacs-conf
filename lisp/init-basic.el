@@ -132,9 +132,31 @@
 ;; show matching parentheses
 (show-paren-mode t)
 
+;; it seems that we need to put customization of faces after load-theme. Otherwise, the
+;; custom face settings will be overwritten. There is no hook for load-theme in emacs, unlike vim,
+;; where we can use au ColorScheme * for such things.
+;; Ref, 1. https://emacs.stackexchange.com/q/41229/23435
+;;      2. https://emacs.stackexchange.com/q/22686/23435
+;;      3. https://www.reddit.com/r/emacs/comments/5l0ri6/is_there_a_reason_there_is_no_afterloadthemehook/
+;;      4. https://www.greghendershott.com/2017/02/emacs-themes.html
 ;; the style for matching parentheses
-(set-face-attribute 'show-paren-match nil
-            :weight 'bold :underline t :slant 'normal)
+
+;; define a custom load-theme hook, ref:
+;; https://github.com/tshu-w/.emacs.d/blob/2f0d005a7afd6224c437068dd0ef6bb4953c39be/lisp/editor-ui.el#L11
+(defvar after-load-theme-hook nil
+  "Hook run after a color theme is loaded using `load-theme'.")
+
+(defun load-theme@after (&rest _)
+  "Run `after-load-theme-hook'."
+  (run-hooks 'after-load-theme-hook))
+(advice-add 'load-theme :after #'load-theme@after)
+
+(defun my-custom-face-conf()
+  (interactive)
+  (set-face-attribute 'show-paren-match nil
+                      :weight 'bold :underline t))
+
+(add-hook 'after-load-theme-hook 'my-custom-face-conf)
 
 ;; remove trailing white space on save, ref: https://emacs.stackexchange.com/a/33720/23435
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
