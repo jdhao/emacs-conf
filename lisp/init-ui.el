@@ -227,4 +227,8 @@
 (modern-fringes-mode)
 (modern-fringes-invert-arrows)
 
+;; popwin manager
+(straight-use-package 'popwin)
+(popwin-mode 1)
+
 (provide 'init-ui)
