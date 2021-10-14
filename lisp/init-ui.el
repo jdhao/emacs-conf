@@ -35,10 +35,11 @@
 
 ;; load a random theme
 (defvar light-themes '(solarized-light
-                       gruvbox-light-soft
+                       doom-gruvbox-light
                        kaolin-valley-light
                        humanoid-light
-                       lab-light)
+                       lab-light
+                       doom-flatwhite)
   "light themes to use")
 
 (defvar dark-themes '(gruvbox
