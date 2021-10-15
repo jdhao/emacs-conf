@@ -32,6 +32,12 @@
 (evil-set-undo-system 'undo-tree)
 (global-undo-tree-mode 1)
 
+;; center search after pressing n
+(defun my-center-line (&rest _)
+  (evil-scroll-line-to-center nil))
+
+(advice-add 'evil-search-next :after #'my-center-line)
+
 ;; close a window or quit emacs (if it is the only window).
 ;; count window num ref: https://emacs.stackexchange.com/q/3494/23435.
 (defun quit-win-or-quit-emacs ()
