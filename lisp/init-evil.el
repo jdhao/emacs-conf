@@ -1,11 +1,7 @@
 
 ;; evil: vim emulation its extension packages
 (straight-use-package 'evil)
-(straight-use-package 'evil-anzu)
-(straight-use-package 'evil-matchit)
-(straight-use-package 'evil-commentary)
 (straight-use-package 'undo-tree)
-(straight-use-package 'evil-surround)
 
 ;; disable showing current state on echo area, ref: https://emacs.stackexchange.com/a/29163/23435.
 (setq evil-insert-state-message nil)
@@ -110,6 +106,7 @@ From https://github.com/emacs-evil/evil/issues/606"
 
 (advice-add #'evil-join :override #'+evil-join-a)
 
+(straight-use-package 'evil-anzu)
 ;; show search count and index
 (require 'evil-anzu)
 (global-anzu-mode +1)
@@ -117,15 +114,19 @@ From https://github.com/emacs-evil/evil/issues/606"
 ;; use spaceline to show anzu status, so we need to disable anzu's native modeline config
 (setq anzu-cons-mode-line-p nil)
 
+(straight-use-package 'evil-matchit)
+
 ;; enable evil-matchit
 (global-evil-matchit-mode 1)
 
 ;; use tab to jump between matching pairs
 (define-key evil-normal-state-map (kbd "TAB") 'evilmi-jump-items)
 
+(straight-use-package 'evil-commentary)
 ;; enable evil-commentary mode
 (evil-commentary-mode)
 
+(straight-use-package 'evil-surround)
 ;; enable evil-surround
 (global-evil-surround-mode)
 
