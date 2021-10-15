@@ -27,31 +27,32 @@
 (straight-use-package 'gruvbox-theme)
 (straight-use-package 'material-theme)
 (straight-use-package 'color-theme-sanityinc-tomorrow)
-(straight-use-package 'moe-theme)
 (straight-use-package 'atom-one-dark-theme)
 (straight-use-package 'kaolin-themes)
 (straight-use-package 'humanoid-themes)
 (straight-use-package 'lab-themes)
+(straight-use-package 'spacemacs-theme)
 
 ;; load a random theme
 (defvar light-themes '(solarized-light
                        doom-gruvbox-light
                        kaolin-valley-light
                        humanoid-light
-                       lab-light
-                       doom-flatwhite)
+                       doom-nord-light
+                       doom-opera-light
+                       doom-one-light
+                       spacemacs-light)
   "light themes to use")
 
 (defvar dark-themes '(gruvbox
                       zenburn
-                      doom-monokai-pro
                       solarized-dark
                       material
-                      moe-dark
                       sanityinc-tomorrow-eighties
                       kaolin-temple
                       atom-one-dark
-                      lab-dark)
+                      lab-dark
+                      spacemacs-dark)
   "dark themes to use")
 
 (defvar jdhao-themes (append light-themes dark-themes))
