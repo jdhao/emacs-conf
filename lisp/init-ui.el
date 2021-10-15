@@ -114,6 +114,16 @@
 
 (centaur-tabs-mode t)
 
+(setq centaur-tabs-style "bar"
+      centaur-tabs-set-icons t
+      centaur-tabs-set-close-button t
+      centaur-tabs-show-new-tab-button nil
+      centaur-tabs-gray-out-icons t
+      centaur-tabs-set-bar 'left
+      centaur-tabs-set-modified-marker t
+      centaur-tabs-modified-marker "●"
+      centaur-tabs--buffer-show-groups nil)
+
 ;; Ref: https://github.com/jixiuf/vmacs/blob/master/conf/conf-centaur-tabs.el#L15
 (defun centaur-tabs-buffer-groups ()
   "`centaur-tabs-buffer-groups' control buffers' group rules.
@@ -177,20 +187,6 @@
      "Emacs")
     ;; ((not (vmacs-show-tabbar-p)) nil)
     (t "Common"))))
-
-(setq centaur-tabs-style "bar")
-(setq centaur-tabs-set-icons t)
-(setq centaur-tabs-set-close-button nil)
-(setq centaur-tabs-gray-out-icons 'buffer)
-(setq centaur-tabs-set-bar 'over)
-
-(when is-mac
-  (setq centaur-tabs-set-modified-marker t))
-(when is-win
-  (centaur-tabs-change-fonts "arial" 100))
-
-(setq centaur-tabs-show-new-tab-button nil)
-(setq centaur-tabs--buffer-show-groups nil)
 
 (define-key evil-normal-state-map (kbd "g t") 'centaur-tabs-forward)
 (define-key evil-normal-state-map (kbd "g T") 'centaur-tabs-backward)
