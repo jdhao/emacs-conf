@@ -63,6 +63,8 @@
 (define-key evil-insert-state-map (kbd "C-n") nil)
 (define-key evil-insert-state-map (kbd "C-p") nil)
 
+(define-key evil-insert-state-map (kbd "TAB") 'tab-to-tab-stop)
+
 ;; In order to use jk to leave insert mode, see also https://stackoverflow.com/q/10569165/6064933.
 (straight-use-package 'key-chord)
 
