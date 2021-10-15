@@ -194,6 +194,9 @@
          (set-fontset-font
           t 'symbol (font-spec :family "Apple Color Emoji") nil 'prepend))
 
+;; tab key settings
+(setq-default tab-width 4)
+
 ;; do not use tab for indentation
 (setq-default indent-tabs-mode nil)
 
@@ -211,5 +214,8 @@
 ;; show clickable links, ref: https://emacs.stackexchange.com/a/30529/23435
 (add-hook 'prog-mode-hook 'goto-address-prog-mode)
 (add-hook 'text-mode-hook 'goto-address-prog-mode)
+
+;; set margin
+(setq left-margin-width 4)
 
 (provide 'init-basic)
