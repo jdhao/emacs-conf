@@ -65,4 +65,7 @@
 (when (memq window-system '(mac ns x))
   (exec-path-from-shell-initialize))
 
+;; benchmark Emacs startup time
+(straight-use-package 'esup)
+
 (provide 'init-misc)
