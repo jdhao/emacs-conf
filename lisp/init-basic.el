@@ -96,13 +96,9 @@
       x-frame-normalize-before-maximize t)
 (add-to-list 'initial-frame-alist '(fullscreen . maximized))
 
-;; disable scroll bar
-(toggle-scroll-bar -1)
-
-;; disable toolbar
+;; disable scroll bar, toolbar, menu bar
+(scroll-bar-mode -1)
 (tool-bar-mode -1)
-
-;; disable menu bar
 (menu-bar-mode -1)
 
 ;; change font style and size
