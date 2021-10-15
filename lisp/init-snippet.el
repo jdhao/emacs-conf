@@ -1,13 +1,17 @@
 
 ;; snippet engine
 (straight-use-package 'yasnippet)
-(straight-use-package 'yasnippet-snippets)
 
 ;; avoid error when using yasnippet with org-mode, ref:
 ;; https://www.reddit.com/r/emacs/comments/nj08dz/issues_with_yasnippet_in_emacs_272_lisp_error/
 (setq yas-indent-line 'fixed)
 
-(yas-global-mode 1)
+;; Improve Emacs load speed by only using yasnippet in certain modes,
+;; ref: https://github.com/joaotavora/yasnippet/issues/904.
+(add-hook 'prog-mode-hook 'yas-minor-mode)
+(add-hook 'text-mode-hoook 'yas-minor-mode)
+
+(straight-use-package 'yasnippet-snippets)
 
 ;; (define-key yas-minor-mode-map (kbd "M-z") 'yas-expand)
 ;; (define-key yas-minor-mode-map (kbd "<tab>") 'yas-expand)
