@@ -15,7 +15,8 @@
 (straight-use-package 'company)
 
 ;; enable company mode in all buffers
-(global-company-mode)
+(add-hook 'prog-mode-hook 'company-mode)
+(add-hook 'text-mode-hook 'company-mode)
 
 ;; use tab and s-tab to cycle forward and backward completion items,
 ;; note that after enabling tng-mode, we can not use return to select
@@ -31,13 +32,18 @@
 ;; meta key and number to insert
 (setq company-show-quick-access 'nil)
 
-(when is-mac
-  (progn (straight-use-package 'company-emoji)
-         ;; add company-emoji to company bankends
-         (add-to-list 'company-backends 'company-emoji)))
+(with-eval-after-load 'company
+  (when is-mac
+    (progn (straight-use-package 'company-emoji)
+           ;; add company-emoji to company bankends
+           (add-to-list 'company-backends 'company-emoji)))
+  )
 
 ;; Use ctrl-return for confirming the selected items.
-(define-key company-active-map (kbd "<C-return>") 'company-complete-selection)
+(add-hook 'company-mode-hook
+          (defun company-setup ()
+            (define-key company-active-map (kbd "<C-return>") 'company-complete-selection)
+            ))
 
 ;; fuzzy searching the company completion candidate
 ;; (straight-use-package 'company-fuzzy)
