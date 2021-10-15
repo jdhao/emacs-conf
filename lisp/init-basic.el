@@ -102,7 +102,9 @@
 (menu-bar-mode -1)
 
 ;; change font style and size
-(cond (is-win (set-frame-font "DejaVuSansMono NF 10"))
+;; (cond (is-win (set-frame-font "DejaVuSansMono NF 10"))
+;;       (is-mac (set-frame-font "Iosevka Nerd Font 15")))
+(cond (is-win (set-frame-font "Cascadia Code 10"))
       (is-mac (set-frame-font "Iosevka Nerd Font 15")))
 
 (set-fontset-font t nil "Symbola" nil 'append)
