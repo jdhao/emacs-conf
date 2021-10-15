@@ -120,6 +120,9 @@ From https://github.com/emacs-evil/evil/issues/606"
 ;; enable evil-matchit
 (global-evil-matchit-mode 1)
 
+;; use tab to jump between matching pairs
+(define-key evil-normal-state-map (kbd "TAB") 'evilmi-jump-items)
+
 ;; enable evil-commentary mode
 (evil-commentary-mode)
 
