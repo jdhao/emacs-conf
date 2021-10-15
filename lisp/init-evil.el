@@ -7,6 +7,10 @@
 (straight-use-package 'undo-tree)
 (straight-use-package 'evil-surround)
 
+;; disable showing current state on echo area, ref: https://emacs.stackexchange.com/a/29163/23435.
+(setq evil-insert-state-message nil)
+(setq evil-visual-state-message nil)
+
 ;; make j and k respect visual line mode.
 ;; note that it breaks evil-commentry, see https://github.com/linktohack/evil-commentary/issues/23.
 ;; (setq evil-respect-visual-line-mode t)
