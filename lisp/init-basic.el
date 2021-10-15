@@ -79,12 +79,10 @@
 ;; show line numbers on the left side of a window
 (global-display-line-numbers-mode t)
 
-;; show relative number like vim. Only use it on macOS, on Windows,
-;; the screen flash due to the use of relative number, which is really
-;; annoying.
-(when is-mac
-  (setq display-line-numbers-type 'relative)
-  )
+;; Show relative number like vim. Note that on Windows, the screen may
+;; flash due to this, which is really annoying, but current there is
+;; no easy fix, ref: https://www.reddit.com/r/emacs/comments/fbb4mm/how_to_debug_flickering/fp2chh5/.
+(setq display-line-numbers-type 'relative)
 
 ;; show line and column number on modeline
 (setq line-number-mode t)
