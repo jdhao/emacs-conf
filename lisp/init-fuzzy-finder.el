@@ -1,16 +1,6 @@
 
 ;; ivy: fuzzy finder
 (straight-use-package 'ivy)
-;; (straight-use-package 'flx)
-(straight-use-package 'counsel)
-(straight-use-package 'ivy-rich) ;; show useful info for ivy items
-(straight-use-package 'all-the-icons-ivy-rich) ;; add fancy icon to ivy UI
-
-(all-the-icons-ivy-rich-mode 1)
-
-;; enable ivy-rich mode
-(ivy-rich-mode t)
-
 ;; enable ivy mode by default
 (ivy-mode 1)
 
@@ -18,6 +8,7 @@
 ;; (setq ivy-re-builders-alist
 ;;       '((t . ivy--regex-fuzzy)))
 
+(straight-use-package 'counsel)
 ;; or enable counsel mode
 (counsel-mode 1)
 
@@ -25,6 +16,14 @@
 (global-set-key (kbd "C-X C-B") 'counsel-switch-buffer)
 (global-set-key (kbd "M-x") 'counsel-M-x)
 (global-set-key (kbd "C-x C-f") 'counsel-find-file)
+
+(straight-use-package 'ivy-rich) ;; show useful info for ivy items
+
+;; enable ivy-rich mode
+(add-hook 'ivy-mode-hook 'ivy-rich-mode)
+
+(straight-use-package 'all-the-icons-ivy-rich) ;; add fancy icon to ivy UI
+(all-the-icons-ivy-rich-mode 1)
 
 (straight-use-package 'ivy-posframe)
 
