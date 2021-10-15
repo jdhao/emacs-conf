@@ -25,8 +25,22 @@
 (which-key-mode t)
 
 ;; show key pressed
-;; (straight-use-package 'showkey)
-;; (showkey-log-mode)
+(straight-use-package 'keycast)
+
+;; Show keycast on doom-modeline, ref:
+;; https://github.com/seagle0128/doom-modeline/issues/122
+;; https://github.com/tarsius/keycast/issues/7.
+(with-eval-after-load 'keycast
+  (define-minor-mode keycast-mode
+    "Show current command and its key binding in the mode line."
+    :global t
+    (if keycast-mode
+        (add-hook 'pre-command-hook 'keycast--update t)
+      (remove-hook 'pre-command-hook 'keycast--update)))
+
+  (add-to-list 'global-mode-string '("" mode-line-keycast)))
+
+(keycast-mode)
 
 ;; auto-save when focus lost
 (straight-use-package 'super-save)
