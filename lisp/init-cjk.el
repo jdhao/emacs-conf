@@ -2,8 +2,6 @@
 ;; 输入中文
 (straight-use-package 'pyim)
 (straight-use-package 'pyim-basedict)
-(require 'pyim)
-(require 'pyim-basedict)
 
 ;; 显示 5 个候选词。
 (setq pyim-page-length 9)
