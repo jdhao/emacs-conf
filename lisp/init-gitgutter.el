@@ -8,10 +8,11 @@
     (custom-set-variables
     '(git-gutter:update-interval 1)))
 
-(custom-set-variables
-    '(git-gutter:hide-gutter t))
+(setq git-gutter:hide-gutter t)
+(setq git-gutter:modified-sign "~")
 
-(global-git-gutter-mode +1)
+;; save load time
+(add-hook 'prog-mode-hook 'git-gutter-mode)
 
 ;; mappings for git-gutter
 (define-key evil-normal-state-map (kbd "] c") 'git-gutter:next-hunk)
