@@ -14,10 +14,6 @@
 
 (global-set-key (kbd "C-'") 'imenu-list-smart-toggle)
 
-;; right click menu
-(straight-use-package 'mouse3)
-(global-set-key (kbd "<mouse-3>") 'mouse3-popup-menu)
-
 ;; gcmh: auto-gc mode
 (straight-use-package 'gcmh)
 (gcmh-mode 1)
