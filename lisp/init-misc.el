@@ -52,12 +52,16 @@
 ;; more helpful help window
 (straight-use-package 'helpful)
 
+(straight-use-package
+ '(ghelp :host github :repo "casouri/ghelp"))
+(require 'ghelp)
+
 ;; bind keys for helpful
-(global-set-key (kbd "C-h f") #'helpful-callable)
-(global-set-key (kbd "C-h v") #'helpful-variable)
-(global-set-key (kbd "C-h k") #'helpful-key)
+(global-set-key (kbd "C-h f") #'ghelp-describe-function)
+(global-set-key (kbd "C-h v") #'ghelp-describe-variable)
+(global-set-key (kbd "C-h k") #'ghelp-describe-key)
 ;; Lookup the current symbol at point.
-(global-set-key (kbd "C-c C-d") #'helpful-at-point)
+(global-set-key (kbd "C-c C-d") #'ghelp-describe-at-point)
 
 ;; fix maxOS PATH issue when starting from GUI
 (straight-use-package 'exec-path-from-shell)
