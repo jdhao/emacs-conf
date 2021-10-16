@@ -9,9 +9,7 @@
 ;; Improve Emacs load speed by only using yasnippet in certain modes,
 ;; ref: https://github.com/joaotavora/yasnippet/issues/904.
 (add-hook 'prog-mode-hook 'yas-minor-mode)
-(add-hook 'text-mode-hoook 'yas-minor-mode)
-
-(straight-use-package 'yasnippet-snippets)
+(add-hook 'text-mode-hook 'yas-minor-mode)
 
 ;; (define-key yas-minor-mode-map (kbd "M-z") 'yas-expand)
 ;; (define-key yas-minor-mode-map (kbd "<tab>") 'yas-expand)
@@ -19,5 +17,7 @@
 ;; change the shortcut to jump between tab stop poistions.
 ;; (define-key yas-keymap (kbd "M-j") 'yas-next-field-or-maybe-expand)
 ;; (define-key yas-keymap (kbd "M-k") 'yas-prev-field)
+
+(straight-use-package 'yasnippet-snippets)
 
 (provide 'init-snippet)
