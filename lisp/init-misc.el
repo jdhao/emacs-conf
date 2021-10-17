@@ -58,10 +58,17 @@
 
 ;; bind keys for helpful
 (global-set-key (kbd "C-h f") #'ghelp-describe-function)
+(define-key evil-normal-state-map (kbd ", h f") 'ghelp-describe-function)
+
 (global-set-key (kbd "C-h v") #'ghelp-describe-variable)
+(define-key evil-normal-state-map (kbd ", h v") 'ghelp-describe-variable)
+
 (global-set-key (kbd "C-h k") #'ghelp-describe-key)
+(define-key evil-normal-state-map (kbd ", h k") 'ghelp-describe-key)
+
 ;; Lookup the current symbol at point.
 (global-set-key (kbd "C-c C-d") #'ghelp-describe-at-point)
+(define-key evil-normal-state-map (kbd ", h d") 'ghelp-describe-at-point)
 
 ;; fix maxOS PATH issue when starting from GUI
 (straight-use-package 'exec-path-from-shell)
