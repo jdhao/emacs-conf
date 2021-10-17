@@ -101,7 +101,7 @@
 (tool-bar-mode -1)
 (menu-bar-mode -1)
 
-;; change font style and size
+;; change font style and size, see also http://ergoemacs.org/emacs/emacs_list_and_set_font.html.
 ;; (cond (is-win (set-frame-font "DejaVuSansMono NF 10"))
 ;;       (is-mac (set-frame-font "Iosevka Nerd Font 15")))
 (cond (is-win (set-frame-font "Cascadia Code 10"))
