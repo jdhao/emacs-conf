@@ -12,10 +12,10 @@
 ;; or enable counsel mode
 (counsel-mode 1)
 
-;; rebind ctrl-x ctrl-b to use counsel-switch-buffer
-(global-set-key (kbd "C-X C-B") 'counsel-switch-buffer)
-(global-set-key (kbd "M-x") 'counsel-M-x)
-(global-set-key (kbd "C-x C-f") 'counsel-find-file)
+(define-key evil-normal-state-map (kbd ", f f") 'counsel-find-file)
+(define-key evil-normal-state-map (kbd ", f g") 'counsel-rg)
+(define-key evil-normal-state-map (kbd ", f b") 'counsel-switch-buffer)
+(define-key evil-normal-state-map (kbd ";") 'counsel-M-x)
 
 (straight-use-package 'ivy-rich) ;; show useful info for ivy items
 
