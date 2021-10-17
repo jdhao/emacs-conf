@@ -1,4 +1,7 @@
 
+(setq evil-want-integration t) ;; This is optional since it's already set to t by default.
+(setq evil-want-keybinding nil)
+
 ;; evil: vim emulation its extension packages
 (straight-use-package 'evil)
 (straight-use-package 'undo-tree)
@@ -143,5 +146,9 @@ From https://github.com/emacs-evil/evil/issues/606"
       evil-goggles-enable-commentary nil)
 
 (evil-goggles-mode)
+
+;; more evil bindings
+(straight-use-package 'evil-collection)
+(evil-collection-init)
 
 (provide 'init-evil)
