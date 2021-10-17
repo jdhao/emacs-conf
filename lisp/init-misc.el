@@ -79,4 +79,9 @@
 ;; benchmark Emacs startup time
 (straight-use-package 'esup)
 
+;; grab link and format it
+(when is-mac
+  (straight-use-package 'grab-mac-link)
+  )
+
 (provide 'init-misc)
