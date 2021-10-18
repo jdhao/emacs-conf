@@ -103,7 +103,8 @@
 ;; change font style and size, see also http://ergoemacs.org/emacs/emacs_list_and_set_font.html.
 ;; (cond (is-win (set-frame-font "DejaVuSansMono NF 10"))
 ;;       (is-mac (set-frame-font "Iosevka Nerd Font 15")))
-(cond (is-win (set-frame-font "Cascadia Code 10"))
+;; For change font style on Windows, ref: https://www.gnu.org/software/emacs/manual/html_node/emacs/Windows-Fonts.html#Windows-Fonts.
+(cond (is-win (set-frame-font "Cascadia Code-10:weight=medium:antialias=subpixel"))
       (is-mac (set-frame-font "Iosevka Nerd Font 15")))
 
 (set-fontset-font t nil "Symbola" nil 'append)
