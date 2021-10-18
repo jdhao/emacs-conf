@@ -12,4 +12,7 @@
       (eval-print-last-sexp)))
   (load bootstrap-file nil 'nomessage))
 
+;; the depth to clone
+(setq straight-vc-git-default-clone-depth 1)
+
 (provide 'init-pack-manager)
