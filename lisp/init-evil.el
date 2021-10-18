@@ -26,6 +26,9 @@
 ;; enable evil mode
 (evil-mode 1)
 
+;; turn off evil on certain mode, ref: https://stackoverflow.com/a/23798344/6064933.
+(add-hook 'Custom-mode-hook 'turn-off-evil-mode)
+
 ;; use undo-tree for redo,
 ;; https://www.reddit.com/r/emacs/comments/n1pibp/comment/gwei7fw/
 (evil-set-undo-system 'undo-tree)
