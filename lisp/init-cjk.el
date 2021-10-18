@@ -7,9 +7,12 @@
 (setq pyim-page-length 9)
 (setq-default default-input-method "pyim")
 
-(pyim-default-scheme 'quanpin)
 (global-set-key (kbd "C-\\") 'toggle-input-method)
-(pyim-basedict-enable)
+
+(with-eval-after-load 'pyim
+  (pyim-default-scheme 'quanpin)
+  (pyim-basedict-enable)
+  )
 
 ;; insert space between Chinese and english character
 (straight-use-package 'pangu-spacing)
