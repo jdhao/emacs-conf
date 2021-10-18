@@ -17,7 +17,7 @@
 ;; insert space between Chinese and english character
 (straight-use-package 'pangu-spacing)
 
-(global-pangu-spacing-mode 1)
+(add-hook 'text-mode-hook global-pangu-spacing-mode)
 (setq pangu-spacing-real-insert-separtor t) ;; really insert the space
 
 (provide 'init-cjk)
