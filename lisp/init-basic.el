@@ -149,8 +149,13 @@
 
 (defun my-custom-face-conf()
   (interactive)
-  (set-face-attribute 'show-paren-match nil
-                      :weight 'bold :underline t))
+  (set-face-attribute 'show-paren-match nil :weight 'bold :underline t)
+  ;; use italic for comment, function names and variable names, ref:
+  ;; https://github.com/hlissner/emacs-doom-themes/issues/248
+  (set-face-attribute 'font-lock-comment-face nil :slant 'italic)
+  ;; (set-face-attribute 'font-lock-function-name-face nil :slant 'italic)
+  ;; (set-face-attribute 'font-lock-variable-name-face nil :slant 'italic)
+  )
 
 (add-hook 'after-load-theme-hook 'my-custom-face-conf)
 
