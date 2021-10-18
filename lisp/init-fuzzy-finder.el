@@ -53,7 +53,7 @@
 (straight-use-package 'prescient)
 (straight-use-package 'ivy-prescient)
 
-(setq prescient-filter-method '(initialism fuzzy))
+(setq prescient-filter-method '(literal fuzzy))
 (setq prescient-sort-full-matches-first t)
 
 (setq ivy-prescient-retain-classic-highlighting t)
