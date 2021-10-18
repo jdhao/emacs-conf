@@ -41,8 +41,7 @@
 
 ;; show file path on title
 (setq frame-title-format
-      `((buffer-file-name "%f" "%b")
-        ,(format " - GNU Emacs %s" emacs-version)))
+      `("%f  " ,(format-time-string "%Y-%m-%d %T")))
 
 ;; use tab to cycle through the completion item
 (setq completion-cycle-threshold 1)
